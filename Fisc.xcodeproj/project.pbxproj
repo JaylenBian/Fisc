@@ -7,17 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E706946F1F49E9FD00E7303D /* GlobalMacro.swift in Sources */ = {isa = PBXBuildFile; fileRef = E706946E1F49E9FD00E7303D /* GlobalMacro.swift */; };
+		E70694711F49EE2A00E7303D /* MCProfileHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E70694701F49EE2A00E7303D /* MCProfileHeaderView.swift */; };
+		E70694751F49EE6C00E7303D /* MCProfileHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E70694741F49EE6C00E7303D /* MCProfileHeaderView.xib */; };
+		E7132D101F4AA0190068A4A0 /* MCAboutVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7132D0F1F4AA0190068A4A0 /* MCAboutVC.swift */; };
 		E7E6122F1F3DA1740019A64B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7E6122E1F3DA1740019A64B /* AppDelegate.swift */; };
 		E7E612361F3DA1740019A64B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E7E612351F3DA1740019A64B /* Assets.xcassets */; };
 		E7E612391F3DA1740019A64B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E7E612371F3DA1740019A64B /* LaunchScreen.storyboard */; };
 		E7E6125E1F3DA9C90019A64B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E7E6125D1F3DA9C90019A64B /* Main.storyboard */; };
-		E7E612671F3DB1A00019A64B /* ESTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7E612601F3DB1A00019A64B /* ESTabBar.swift */; };
-		E7E612681F3DB1A00019A64B /* ESTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7E612611F3DB1A00019A64B /* ESTabBarController.swift */; };
-		E7E612691F3DB1A00019A64B /* ESTabBarItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7E612621F3DB1A00019A64B /* ESTabBarItem.swift */; };
-		E7E6126A1F3DB1A00019A64B /* ESTabBarItemBadgeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7E612631F3DB1A00019A64B /* ESTabBarItemBadgeView.swift */; };
-		E7E6126B1F3DB1A00019A64B /* ESTabBarItemContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7E612641F3DB1A00019A64B /* ESTabBarItemContainer.swift */; };
-		E7E6126C1F3DB1A00019A64B /* ESTabBarItemContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7E612651F3DB1A00019A64B /* ESTabBarItemContentView.swift */; };
-		E7E6126D1F3DB1A00019A64B /* ESTabBarItemMoreContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7E612661F3DB1A00019A64B /* ESTabBarItemMoreContentView.swift */; };
 		E7E6126F1F3DB1F40019A64B /* MCTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7E6126E1F3DB1F40019A64B /* MCTabBarController.swift */; };
 		E7E612711F3DB2520019A64B /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E7E612701F3DB2520019A64B /* Home.storyboard */; };
 		E7E612731F3DB2E70019A64B /* MCNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7E612721F3DB2E70019A64B /* MCNavigationController.swift */; };
@@ -32,22 +29,23 @@
 		E7E6128C1F3EA6CE0019A64B /* atm_link.json in Resources */ = {isa = PBXBuildFile; fileRef = E7E612891F3EA6CE0019A64B /* atm_link.json */; };
 		E7E6128D1F3EA6CE0019A64B /* download_icon_success.json in Resources */ = {isa = PBXBuildFile; fileRef = E7E6128A1F3EA6CE0019A64B /* download_icon_success.json */; };
 		E7E6128E1F3EA6CE0019A64B /* touch_id.json in Resources */ = {isa = PBXBuildFile; fileRef = E7E6128B1F3EA6CE0019A64B /* touch_id.json */; };
+		E7E612B01F3F61FE0019A64B /* Pods_Fisc.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2975AD68B4AEEC1BB36004BD /* Pods_Fisc.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2975AD68B4AEEC1BB36004BD /* Pods_Fisc.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Fisc.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		39EE5484F02B3815F8879FAB /* Pods-Fisc.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Fisc.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Fisc/Pods-Fisc.debug.xcconfig"; sourceTree = "<group>"; };
+		7BD3BF6639A8006A6177452D /* Pods-Fisc.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Fisc.release.xcconfig"; path = "Pods/Target Support Files/Pods-Fisc/Pods-Fisc.release.xcconfig"; sourceTree = "<group>"; };
+		E706946E1F49E9FD00E7303D /* GlobalMacro.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GlobalMacro.swift; sourceTree = "<group>"; };
+		E70694701F49EE2A00E7303D /* MCProfileHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MCProfileHeaderView.swift; sourceTree = "<group>"; };
+		E70694741F49EE6C00E7303D /* MCProfileHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MCProfileHeaderView.xib; sourceTree = "<group>"; };
+		E7132D0F1F4AA0190068A4A0 /* MCAboutVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MCAboutVC.swift; sourceTree = "<group>"; };
 		E7E6122B1F3DA1740019A64B /* Fisc.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Fisc.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E7E6122E1F3DA1740019A64B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E7E612351F3DA1740019A64B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E7E612381F3DA1740019A64B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E7E6123A1F3DA1740019A64B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E7E6125D1F3DA9C90019A64B /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
-		E7E612601F3DB1A00019A64B /* ESTabBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ESTabBar.swift; sourceTree = "<group>"; };
-		E7E612611F3DB1A00019A64B /* ESTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ESTabBarController.swift; sourceTree = "<group>"; };
-		E7E612621F3DB1A00019A64B /* ESTabBarItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ESTabBarItem.swift; sourceTree = "<group>"; };
-		E7E612631F3DB1A00019A64B /* ESTabBarItemBadgeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ESTabBarItemBadgeView.swift; sourceTree = "<group>"; };
-		E7E612641F3DB1A00019A64B /* ESTabBarItemContainer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ESTabBarItemContainer.swift; sourceTree = "<group>"; };
-		E7E612651F3DB1A00019A64B /* ESTabBarItemContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ESTabBarItemContentView.swift; sourceTree = "<group>"; };
-		E7E612661F3DB1A00019A64B /* ESTabBarItemMoreContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ESTabBarItemMoreContentView.swift; sourceTree = "<group>"; };
 		E7E6126E1F3DB1F40019A64B /* MCTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MCTabBarController.swift; sourceTree = "<group>"; };
 		E7E612701F3DB2520019A64B /* Home.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
 		E7E612721F3DB2E70019A64B /* MCNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MCNavigationController.swift; sourceTree = "<group>"; };
@@ -62,6 +60,9 @@
 		E7E612891F3EA6CE0019A64B /* atm_link.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = atm_link.json; sourceTree = "<group>"; };
 		E7E6128A1F3EA6CE0019A64B /* download_icon_success.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = download_icon_success.json; sourceTree = "<group>"; };
 		E7E6128B1F3EA6CE0019A64B /* touch_id.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = touch_id.json; sourceTree = "<group>"; };
+		E7E6128F1F3F61660019A64B /* ESTabBarController_swift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ESTabBarController_swift.framework; path = "../../../Library/Developer/Xcode/DerivedData/Fisc-cypifscaphubnvdmriuaopjbanfj/Build/Products/Debug-iphonesimulator/ESTabBarController-swift/ESTabBarController_swift.framework"; sourceTree = "<group>"; };
+		E7E612901F3F61660019A64B /* Lottie.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Lottie.framework; path = "Pods/../build/Debug-iphoneos/lottie-ios/Lottie.framework"; sourceTree = "<group>"; };
+		E7E612911F3F61660019A64B /* pop.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = pop.framework; path = "Pods/../build/Debug-iphoneos/pop/pop.framework"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,17 +70,40 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E7E612B01F3F61FE0019A64B /* Pods_Fisc.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0588F83283276931E98A6C18 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E7E6128F1F3F61660019A64B /* ESTabBarController_swift.framework */,
+				E7E612901F3F61660019A64B /* Lottie.framework */,
+				E7E612911F3F61660019A64B /* pop.framework */,
+				2975AD68B4AEEC1BB36004BD /* Pods_Fisc.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		170447727B54FE7942799D81 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				39EE5484F02B3815F8879FAB /* Pods-Fisc.debug.xcconfig */,
+				7BD3BF6639A8006A6177452D /* Pods-Fisc.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		E7E612221F3DA1740019A64B = {
 			isa = PBXGroup;
 			children = (
 				E7E6122D1F3DA1740019A64B /* Fisc */,
 				E7E6122C1F3DA1740019A64B /* Products */,
+				170447727B54FE7942799D81 /* Pods */,
+				0588F83283276931E98A6C18 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -123,6 +147,7 @@
 			isa = PBXGroup;
 			children = (
 				E7E612861F3EA4000019A64B /* UIColor+Extension.swift */,
+				E706946E1F49E9FD00E7303D /* GlobalMacro.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -263,7 +288,6 @@
 		E7E612561F3DA9180019A64B /* Tools */ = {
 			isa = PBXGroup;
 			children = (
-				E7E6125F1F3DB1A00019A64B /* ESTabBar */,
 			);
 			path = Tools;
 			sourceTree = "<group>";
@@ -283,20 +307,6 @@
 			path = Framework;
 			sourceTree = "<group>";
 		};
-		E7E6125F1F3DB1A00019A64B /* ESTabBar */ = {
-			isa = PBXGroup;
-			children = (
-				E7E612601F3DB1A00019A64B /* ESTabBar.swift */,
-				E7E612611F3DB1A00019A64B /* ESTabBarController.swift */,
-				E7E612621F3DB1A00019A64B /* ESTabBarItem.swift */,
-				E7E612631F3DB1A00019A64B /* ESTabBarItemBadgeView.swift */,
-				E7E612641F3DB1A00019A64B /* ESTabBarItemContainer.swift */,
-				E7E612651F3DB1A00019A64B /* ESTabBarItemContentView.swift */,
-				E7E612661F3DB1A00019A64B /* ESTabBarItemMoreContentView.swift */,
-			);
-			path = ESTabBar;
-			sourceTree = "<group>";
-		};
 		E7E612781F3E9EC80019A64B /* Profile */ = {
 			isa = PBXGroup;
 			children = (
@@ -312,6 +322,7 @@
 			isa = PBXGroup;
 			children = (
 				E7E612841F3EA15D0019A64B /* MCProfileVC.swift */,
+				E7132D0F1F4AA0190068A4A0 /* MCAboutVC.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -326,6 +337,8 @@
 		E7E6127B1F3E9EC80019A64B /* View */ = {
 			isa = PBXGroup;
 			children = (
+				E70694701F49EE2A00E7303D /* MCProfileHeaderView.swift */,
+				E70694741F49EE6C00E7303D /* MCProfileHeaderView.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -347,9 +360,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = E7E6123D1F3DA1740019A64B /* Build configuration list for PBXNativeTarget "Fisc" */;
 			buildPhases = (
+				B1F9D163DC0940A2ACFCBF1E /* [CP] Check Pods Manifest.lock */,
 				E7E612271F3DA1740019A64B /* Sources */,
 				E7E612281F3DA1740019A64B /* Frameworks */,
 				E7E612291F3DA1740019A64B /* Resources */,
+				FEB2B89E9E7F37514AC65337 /* [CP] Embed Pods Frameworks */,
+				57BA18E24B833490D23D2DC5 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -411,31 +427,76 @@
 				E7E6127D1F3E9EE10019A64B /* Profile.storyboard in Resources */,
 				E7E612711F3DB2520019A64B /* Home.storyboard in Resources */,
 				E7E6128D1F3EA6CE0019A64B /* download_icon_success.json in Resources */,
+				E70694751F49EE6C00E7303D /* MCProfileHeaderView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		57BA18E24B833490D23D2DC5 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Fisc/Pods-Fisc-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B1F9D163DC0940A2ACFCBF1E /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		FEB2B89E9E7F37514AC65337 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Fisc/Pods-Fisc-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		E7E612271F3DA1740019A64B /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E7E6126D1F3DB1A00019A64B /* ESTabBarItemMoreContentView.swift in Sources */,
 				E7E612831F3EA1380019A64B /* MCMarketsVC.swift in Sources */,
 				E7E612851F3EA15D0019A64B /* MCProfileVC.swift in Sources */,
-				E7E612691F3DB1A00019A64B /* ESTabBarItem.swift in Sources */,
 				E7E6127F1F3EA0400019A64B /* MCHomeVC.swift in Sources */,
+				E706946F1F49E9FD00E7303D /* GlobalMacro.swift in Sources */,
 				E7E6122F1F3DA1740019A64B /* AppDelegate.swift in Sources */,
 				E7E612811F3EA0F20019A64B /* MCNewsTVC.swift in Sources */,
-				E7E6126B1F3DB1A00019A64B /* ESTabBarItemContainer.swift in Sources */,
-				E7E612681F3DB1A00019A64B /* ESTabBarController.swift in Sources */,
 				E7E612871F3EA4000019A64B /* UIColor+Extension.swift in Sources */,
-				E7E6126A1F3DB1A00019A64B /* ESTabBarItemBadgeView.swift in Sources */,
-				E7E612671F3DB1A00019A64B /* ESTabBar.swift in Sources */,
 				E7E612731F3DB2E70019A64B /* MCNavigationController.swift in Sources */,
-				E7E6126C1F3DB1A00019A64B /* ESTabBarItemContentView.swift in Sources */,
 				E7E6126F1F3DB1F40019A64B /* MCTabBarController.swift in Sources */,
+				E7132D101F4AA0190068A4A0 /* MCAboutVC.swift in Sources */,
+				E70694711F49EE2A00E7303D /* MCProfileHeaderView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -548,12 +609,15 @@
 		};
 		E7E6123E1F3DA1740019A64B /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 39EE5484F02B3815F8879FAB /* Pods-Fisc.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = XQ4VPYFFH5;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Fisc/Framework",
+					"$(PROJECT_DIR)/build/Debug-iphoneos/lottie-ios",
+					"$(PROJECT_DIR)/build/Debug-iphoneos/pop",
 				);
 				INFOPLIST_FILE = Fisc/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
@@ -561,17 +625,21 @@
 				PRODUCT_BUNDLE_IDENTIFIER = org.minecode.Fisc;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
+				USER_HEADER_SEARCH_PATHS = "$(PODS_ROOT)/**";
 			};
 			name = Debug;
 		};
 		E7E6123F1F3DA1740019A64B /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7BD3BF6639A8006A6177452D /* Pods-Fisc.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = XQ4VPYFFH5;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Fisc/Framework",
+					"$(PROJECT_DIR)/build/Debug-iphoneos/lottie-ios",
+					"$(PROJECT_DIR)/build/Debug-iphoneos/pop",
 				);
 				INFOPLIST_FILE = Fisc/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
@@ -579,6 +647,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = org.minecode.Fisc;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
+				USER_HEADER_SEARCH_PATHS = "$(PODS_ROOT)/**";
 			};
 			name = Release;
 		};

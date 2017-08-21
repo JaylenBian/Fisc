@@ -1,0 +1,18 @@
+PODS:
+  - ESTabBarController-swift (2.4)
+  - lottie-ios (1.5.1)
+  - pop (1.0.9)
+
+DEPENDENCIES:
+  - ESTabBarController-swift
+  - lottie-ios
+  - pop (~> 1.0)
+
+SPEC CHECKSUMS:
+  ESTabBarController-swift: af496895039ba10ae60bf825473c45f23fc5c8b6
+  lottie-ios: f680a7c4cb7a567ecf258fde0f967913aff111b8
+  pop: f667631a5108a2e60d9e8797c9b32ddaf2080bce
+
+PODFILE CHECKSUM: 3164ab09735460e109ca48293d35d42616f1a2b9
+
+COCOAPODS: 1.2.1

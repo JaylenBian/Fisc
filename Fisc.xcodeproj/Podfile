@@ -1,0 +1,5 @@
+platform :ios, '8.0'
+
+target 'Fisc' do
+  pod 'lottie-ios'
+end
