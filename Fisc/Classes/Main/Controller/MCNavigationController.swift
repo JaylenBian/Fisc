@@ -12,8 +12,11 @@ class MCNavigationController: UINavigationController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        self.navigationBar.barTintColor = UIColor(r: 0, g: 142, b: 250)
+        
+        // 设置NavigationBar样式
+        self.navigationBar.barTintColor = UIColor(r: 255, g: 85, b: 42)
+        self.navigationBar.isTranslucent = false
+        
     }
 
 }

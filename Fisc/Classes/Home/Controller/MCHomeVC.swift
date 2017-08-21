@@ -10,23 +10,23 @@ import UIKit
 import Lottie
 
 class MCHomeVC: UIViewController {
-    
-    let lottieView: LAAnimationView! = {
-        let lottieView = LAAnimationView.animationNamed("atm_link")
-        lottieView?.loopAnimation = true
-        lottieView?.contentMode = .scaleAspectFit
-        lottieView?.play()
-        return lottieView
-    }()
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         self.view.backgroundColor = UIColor(r: 250, g: 250, b: 250)
         
-        lottieView.frame = self.view.frame
-        lottieView.center = self.view.center
-        self.view.addSubview(lottieView)
+        if let animationView = LOTAnimationView(name: "atm_link") {
+            animationView.frame = CGRect(x: 0, y: 200, width: self.view.bounds.width, height: 400)
+//            animationView.center = self.view.center
+            animationView.contentMode = .scaleAspectFill
+            
+            animationView.loopAnimation = true
+            
+            view.addSubview(animationView)
+            
+            animationView.play()
+        }
     }
     
 }
