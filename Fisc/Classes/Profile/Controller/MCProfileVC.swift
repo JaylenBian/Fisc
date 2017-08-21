@@ -19,9 +19,9 @@ enum VC: String {
     func sbIdentifier() -> String {
         switch self {
         case .ViewSourceCode:
-            return ""
+            return "profile_sourceCode"
         case .ContactAuther:
-            return ""
+            return "profile_contactAuthor"
         case .About:
             return "profile_about"
         }
@@ -76,6 +76,28 @@ class MCProfileVC: UITableViewController {
         // 加载目标VC
         let storyboard = UIStoryboard.init(name: "Profile", bundle: Bundle.main)
         let vcId = vcs[indexPath.section][indexPath.row].sbIdentifier()
+        
+        // 判断是否为非控制器跳转的选项
+        if vcId == "profile_contactAuthor" {
+            let emailAdd = "minecoder@163.com"
+            // show alert
+            let alertController = UIAlertController(title: "复制邮箱", message: "确认将作者邮箱复制到剪切板吗？", preferredStyle: .alert)
+            let alertCancel = UIAlertAction(title: "取消", style: .cancel, handler: nil)
+            let alertConfirm = UIAlertAction(title: "确认", style: .default, handler: { (alertConfirm) in
+                let pasteBoard = UIPasteboard.general
+                pasteBoard.string = emailAdd
+                let confirmController = UIAlertController(title: "复制成功", message: "成功复制到剪切板", preferredStyle: .alert)
+                let confirmMsg = UIAlertAction(title: "好的", style: .cancel, handler: nil)
+                confirmController.addAction(confirmMsg)
+                self.present(confirmController, animated: true, completion: nil)
+            })
+            alertController.addAction(alertCancel)
+            alertController.addAction(alertConfirm)
+            
+            self.present(alertController, animated: true, completion: nil)
+            return
+        }
+        
         let destinationVc = storyboard.instantiateViewController(withIdentifier: vcId)
         
         // 设置目标VC属性

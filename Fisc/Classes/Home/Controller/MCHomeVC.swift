@@ -10,7 +10,7 @@ import UIKit
 import Lottie
 
 class MCHomeVC: UIViewController {
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -21,12 +21,14 @@ class MCHomeVC: UIViewController {
 //            animationView.center = self.view.center
             animationView.contentMode = .scaleAspectFill
             
-            animationView.loopAnimation = true
+            animationView.loopAnimation = false
             
             view.addSubview(animationView)
             
             animationView.play()
         }
+        
+        
     }
     
 }
