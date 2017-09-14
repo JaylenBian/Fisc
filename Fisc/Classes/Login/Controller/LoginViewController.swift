@@ -25,6 +25,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         
         //self.view.backgroundColor = UIColor.white
         
+        loadProfile()
         setupUI()
 //        setup
         
@@ -39,11 +40,37 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         // add target
         self.loginButton.addTarget(self, action: #selector(loginHandler), for: .touchUpInside)
         self.registerButton.addTarget(self, action: #selector(registerHandler), for: .touchUpInside)
+        
+        // init widget
+        registerButton.isEnabled = true
+        loginButton.isEnabled = true
     }
 }
 
 // MARK: - main logic function
 extension LoginViewController {
+    
+    func loadProfile() {
+        let userDefaults = UserDefaults.standard
+        
+        if userDefaults.bool(forKey: "isSaved") {
+            // load profile
+            let account = userDefaults.string(forKey: "savedAccount")
+            let password = userDefaults.string(forKey: "savedPassword")
+            // load to text field
+            emailTextField.text = account
+            passwordTextField.text = password
+        }
+    }
+    
+    func writeProfile(accout: String, password: String) {
+        let userDefaults = UserDefaults.standard
+        userDefaults.set(true, forKey: "isSaved")
+        
+        // save
+        userDefaults.set(accout, forKey: "savedAccount")
+        userDefaults.set(password, forKey: "savedPassword")
+    }
     
     func loginHandler() {
         guard let email = self.emailTextField.text,
@@ -52,18 +79,19 @@ extension LoginViewController {
                 return
         }
         
+        loginButton.isEnabled = false
         Auth.auth().signIn(withEmail: email, password: password) { (user, error) in
             
             if error != nil {
-                print(error?.localizedDescription ?? "Unkown error")
+                
+                let errorMsg = error?.localizedDescription
+                self.showAlert(with: errorMsg ?? "发生未知错误，请联系管理员")
+                self.loginButton.isEnabled = true
+                
                 return
             }
             
-            let appDelegate = UIApplication.shared.delegate as! AppDelegate
-            appDelegate.uid = user?.uid
-            
-            let vc = UIStoryboard(name: "Main", bundle: nil).instantiateInitialViewController() as! MCTabBarController
-            appDelegate.window?.rootViewController = vc
+            self.loginProcesser(with: user)
         }
     }
     
@@ -73,21 +101,44 @@ extension LoginViewController {
         else {
             return
         }
-        
+
+        self.registerButton.isEnabled = false
         Auth.auth().createUser(withEmail: email, password: password) { (user, error) in
             
             if error != nil {
-                print(error?.localizedDescription ?? "Unkown error")
+                let errorMsg = error?.localizedDescription
+                self.showAlert(with: errorMsg ?? "发生未知错误，请联系管理员")
+                self.registerButton.isEnabled = true
+                
                 return
             }
             
-            let appDelegate = UIApplication.shared.delegate as! AppDelegate
-            appDelegate.uid = user?.uid
-            
-            let vc = UIStoryboard(name: "Main", bundle: nil).instantiateInitialViewController() as! MCTabBarController
-            appDelegate.window?.rootViewController = vc
+            self.loginProcesser(with: user)
         }
         
+    }
+    
+    func showAlert(with msg: String) {
+        let alert = UIAlertController(title: "错误", message: msg, preferredStyle: .alert)
+        let alertAction = UIAlertAction(title: "确定", style: .cancel) { (alertAction) in
+            self.emailTextField.text?.removeAll()
+            self.passwordTextField.text?.removeAll()
+            self.usernameTextField.text?.removeAll()
+        }
+        alert.addAction(alertAction)
+        present(alert, animated: true, completion: nil)
+    }
+    
+    func loginProcesser(with user: User?) {
+        let accout = emailTextField.text ?? ""
+        let password = passwordTextField.text ?? ""
+        self.writeProfile(accout: accout, password: password)
+        
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        appDelegate.uid = user?.uid
+        
+        let vc = UIStoryboard(name: "Main", bundle: nil).instantiateInitialViewController() as! MCTabBarController
+        appDelegate.window?.rootViewController = vc
     }
     
 }

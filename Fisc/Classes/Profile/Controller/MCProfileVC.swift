@@ -42,9 +42,12 @@ enum VC: String {
     }
 }
 
-class MCProfileVC: UITableViewController {
+class MCProfileVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     @IBOutlet weak var logoutButton: UIButton!
+    @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var profileUserIcon: UIImageView!
+    @IBOutlet weak var profileUserName: UILabel!
     
     
     let vcs = [[VC.ViewSourceCode, VC.ContactAuther],
@@ -53,7 +56,7 @@ class MCProfileVC: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        setupHeaderView()
+        //setupHeaderView()
         setupUI()
         
     }
@@ -66,19 +69,18 @@ class MCProfileVC: UITableViewController {
     }
     
     func setupUI() {
-        self.logoutButton.layer.cornerRadius = 10
-        
+        self.logoutButton.layer.cornerRadius = 15
     }
     
-    override func numberOfSections(in tableView: UITableView) -> Int {
+    func numberOfSections(in tableView: UITableView) -> Int {
         return vcs.count
     }
     
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return vcs[section].count
     }
     
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: cellId)
         
         cell?.textLabel?.text = vcs[indexPath.section][indexPath.row].title();
@@ -86,7 +88,7 @@ class MCProfileVC: UITableViewController {
         return cell!
     }
     
-    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         // 加载目标VC
         let storyboard = UIStoryboard.init(name: "Profile", bundle: Bundle.main)
