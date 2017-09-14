@@ -18,5 +18,5 @@ class MCNavigationController: UINavigationController {
         self.navigationBar.isTranslucent = false
         
     }
-
+    
 }

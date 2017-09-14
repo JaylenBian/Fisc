@@ -24,6 +24,9 @@ class MCTabBarController: UITabBarController {
         let childVc = UIStoryboard(name: storyName, bundle: nil).instantiateInitialViewController()!
         
         childVc.tabBarItem.title = storyName
+        childVc.tabBarItem.image = UIImage(named: "tab_" + storyName.lowercased() + "_normal")
+        childVc.tabBarItem.selectedImage = UIImage(named: "tab_" + storyName.lowercased() + "_selected")?.withRenderingMode(.alwaysOriginal)
+        
         addChildViewController(childVc)
     }
     

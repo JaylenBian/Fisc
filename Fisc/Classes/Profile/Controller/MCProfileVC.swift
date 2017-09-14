@@ -7,9 +7,12 @@
 //
 
 import UIKit
+import Firebase
 
 let cellId = "cellId"
 let kHeaderViewMargin: CGFloat = 64
+
+
 
 enum VC: String {
     case ViewSourceCode
@@ -41,17 +44,29 @@ enum VC: String {
 
 class MCProfileVC: UITableViewController {
     
+    @IBOutlet weak var logoutButton: UIButton!
+    
+    
     let vcs = [[VC.ViewSourceCode, VC.ContactAuther],
                  [VC.About]]
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        setupHeaderView()
+        setupUI()
+        
+    }
+    
+    func setupHeaderView() {
         let headerView: MCProfileHeaderView = Bundle.main.loadNibNamed("MCProfileHeaderView", owner: nil, options: nil)?.first as! MCProfileHeaderView
         var headerViewRect = headerView.frame
         headerViewRect.origin.y += kHeaderViewMargin
         self.tableView.tableHeaderView = headerView
-        
+    }
+    
+    func setupUI() {
+        self.logoutButton.layer.cornerRadius = 10
         
     }
     
@@ -113,7 +128,7 @@ class MCProfileVC: UITableViewController {
         // 跳转后工作
         hidesBottomBarWhenPushed = false
     }
-//    
+
 //    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
 //        for iter in 0..<vc.count {
 //            if segue.identifier == vc[iter].segueIdentifier() {
@@ -121,7 +136,21 @@ class MCProfileVC: UITableViewController {
 //                break
 //            }
 //        }
-//        
+//    
 //    }
-    
+    @IBAction func logoutAction(_ sender: Any) {
+        do {
+            try Auth.auth().signOut()
+            
+            let vc = UIStoryboard.init(name: "Login", bundle: nil).instantiateInitialViewController() as! LoginViewController
+            self.present(vc, animated: true, completion: {
+                UIApplication.shared.keyWindow?.rootViewController = vc
+            })
+            
+        } catch {
+            print(error.localizedDescription)
+            return
+        }
+    }
+
 }

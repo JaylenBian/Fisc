@@ -4,7 +4,6 @@
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -15,7 +14,10 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="300"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="VwY-Eq-ptx">
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="CWY-bv-IcH" userLabel="Background Image">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="300"/>
+                </imageView>
+                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="VwY-Eq-ptx">
                     <rect key="frame" x="37" y="75" width="300" height="150"/>
                     <color key="backgroundColor" red="0.0" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
@@ -25,13 +27,22 @@
                 </imageView>
             </subviews>
             <constraints>
+                <constraint firstItem="CWY-bv-IcH" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="7yR-ku-Wzk"/>
+                <constraint firstItem="CWY-bv-IcH" firstAttribute="width" secondItem="iN0-l3-epB" secondAttribute="width" id="ImD-2a-8Y2"/>
                 <constraint firstItem="VwY-Eq-ptx" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="P3f-10-RUS"/>
+                <constraint firstItem="CWY-bv-IcH" firstAttribute="width" secondItem="iN0-l3-epB" secondAttribute="width" id="UqK-I4-Sbf"/>
+                <constraint firstItem="CWY-bv-IcH" firstAttribute="height" secondItem="iN0-l3-epB" secondAttribute="height" id="dk9-Qa-l73"/>
                 <constraint firstItem="VwY-Eq-ptx" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="hyA-VT-Hrc"/>
+                <constraint firstItem="CWY-bv-IcH" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="tRk-Tn-AUY"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>
                 <outlet property="imageView" destination="VwY-Eq-ptx" id="euM-Rz-Ydb"/>
             </connections>
+            <point key="canvasLocation" x="26.5" y="52"/>
         </view>
     </objects>
+    <resources>
+        <image name="logo" width="960" height="854"/>
+    </resources>
 </document>

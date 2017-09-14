@@ -12,6 +12,10 @@
 		E70694751F49EE6C00E7303D /* MCProfileHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E70694741F49EE6C00E7303D /* MCProfileHeaderView.xib */; };
 		E7132D101F4AA0190068A4A0 /* MCAboutVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7132D0F1F4AA0190068A4A0 /* MCAboutVC.swift */; };
 		E7132D121F4AA7D80068A4A0 /* MCSourceVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7132D111F4AA7D80068A4A0 /* MCSourceVC.swift */; };
+		E7733CB11F6A1A8C0032E70E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E7733CB01F6A1A8C0032E70E /* GoogleService-Info.plist */; };
+		E7733CB71F6A1CFA0032E70E /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7733CB61F6A1CFA0032E70E /* LoginViewController.swift */; };
+		E7733CB91F6A1D090032E70E /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E7733CB81F6A1D090032E70E /* Login.storyboard */; };
+		E7733CD01F6A3DF90032E70E /* NSArray+Log.m in Sources */ = {isa = PBXBuildFile; fileRef = E7733CCF1F6A3DF90032E70E /* NSArray+Log.m */; };
 		E7E6122F1F3DA1740019A64B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7E6122E1F3DA1740019A64B /* AppDelegate.swift */; };
 		E7E612361F3DA1740019A64B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E7E612351F3DA1740019A64B /* Assets.xcassets */; };
 		E7E612391F3DA1740019A64B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E7E612371F3DA1740019A64B /* LaunchScreen.storyboard */; };
@@ -42,6 +46,20 @@
 		E70694741F49EE6C00E7303D /* MCProfileHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MCProfileHeaderView.xib; sourceTree = "<group>"; };
 		E7132D0F1F4AA0190068A4A0 /* MCAboutVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MCAboutVC.swift; sourceTree = "<group>"; };
 		E7132D111F4AA7D80068A4A0 /* MCSourceVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MCSourceVC.swift; sourceTree = "<group>"; };
+		E7733CB01F6A1A8C0032E70E /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		E7733CB61F6A1CFA0032E70E /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoginViewController.swift; path = Login/Controller/LoginViewController.swift; sourceTree = "<group>"; };
+		E7733CB81F6A1D090032E70E /* Login.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Login.storyboard; path = Login/Login.storyboard; sourceTree = "<group>"; };
+		E7733CBB1F6A2DDE0032E70E /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = "../../../Library/Developer/Xcode/DerivedData/Fisc-cypifscaphubnvdmriuaopjbanfj/Build/Products/Debug-iphonesimulator/Alamofire/Alamofire.framework"; sourceTree = "<group>"; };
+		E7733CBC1F6A2DDE0032E70E /* GoogleToolboxForMac.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleToolboxForMac.framework; path = "../../../Library/Developer/Xcode/DerivedData/Fisc-cypifscaphubnvdmriuaopjbanfj/Build/Products/Debug-iphonesimulator/GoogleToolboxForMac/GoogleToolboxForMac.framework"; sourceTree = "<group>"; };
+		E7733CBD1F6A2DDE0032E70E /* GTMSessionFetcher.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GTMSessionFetcher.framework; path = "../../../Library/Developer/Xcode/DerivedData/Fisc-cypifscaphubnvdmriuaopjbanfj/Build/Products/Debug-iphonesimulator/GTMSessionFetcher/GTMSessionFetcher.framework"; sourceTree = "<group>"; };
+		E7733CBE1F6A2DDE0032E70E /* Lottie.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Lottie.framework; path = "../../../Library/Developer/Xcode/DerivedData/Fisc-cypifscaphubnvdmriuaopjbanfj/Build/Products/Debug-iphonesimulator/lottie-ios/Lottie.framework"; sourceTree = "<group>"; };
+		E7733CBF1F6A2DDE0032E70E /* nanopb.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = nanopb.framework; path = "Pods/../build/Debug-iphoneos/nanopb/nanopb.framework"; sourceTree = "<group>"; };
+		E7733CC01F6A2DDE0032E70E /* pop.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = pop.framework; path = "../../../Library/Developer/Xcode/DerivedData/Fisc-cypifscaphubnvdmriuaopjbanfj/Build/Products/Debug-iphonesimulator/pop/pop.framework"; sourceTree = "<group>"; };
+		E7733CC11F6A2DDE0032E70E /* SDWebImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SDWebImage.framework; path = "../../../Library/Developer/Xcode/DerivedData/Fisc-cypifscaphubnvdmriuaopjbanfj/Build/Products/Debug-iphonesimulator/SDWebImage/SDWebImage.framework"; sourceTree = "<group>"; };
+		E7733CC21F6A2DDE0032E70E /* SwiftyJSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyJSON.framework; path = "../../../Library/Developer/Xcode/DerivedData/Fisc-cypifscaphubnvdmriuaopjbanfj/Build/Products/Debug-iphonesimulator/SwiftyJSON/SwiftyJSON.framework"; sourceTree = "<group>"; };
+		E7733CCD1F6A3DF90032E70E /* Fisc-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Fisc-Bridging-Header.h"; sourceTree = "<group>"; };
+		E7733CCE1F6A3DF90032E70E /* NSArray+Log.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+Log.h"; sourceTree = "<group>"; };
+		E7733CCF1F6A3DF90032E70E /* NSArray+Log.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+Log.m"; sourceTree = "<group>"; };
 		E7E6122B1F3DA1740019A64B /* Fisc.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Fisc.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E7E6122E1F3DA1740019A64B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E7E612351F3DA1740019A64B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -82,6 +100,14 @@
 		0588F83283276931E98A6C18 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				E7733CBB1F6A2DDE0032E70E /* Alamofire.framework */,
+				E7733CBC1F6A2DDE0032E70E /* GoogleToolboxForMac.framework */,
+				E7733CBD1F6A2DDE0032E70E /* GTMSessionFetcher.framework */,
+				E7733CBE1F6A2DDE0032E70E /* Lottie.framework */,
+				E7733CBF1F6A2DDE0032E70E /* nanopb.framework */,
+				E7733CC01F6A2DDE0032E70E /* pop.framework */,
+				E7733CC11F6A2DDE0032E70E /* SDWebImage.framework */,
+				E7733CC21F6A2DDE0032E70E /* SwiftyJSON.framework */,
 				E7E6128F1F3F61660019A64B /* ESTabBarController_swift.framework */,
 				E7E612901F3F61660019A64B /* Lottie.framework */,
 				E7E612911F3F61660019A64B /* pop.framework */,
@@ -97,6 +123,39 @@
 				7BD3BF6639A8006A6177452D /* Pods-Fisc.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		E7733CB21F6A1C660032E70E /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				E7733CB51F6A1C9D0032E70E /* View */,
+				E7733CB41F6A1C990032E70E /* Model */,
+				E7733CB31F6A1C8F0032E70E /* Controller */,
+				E7733CB81F6A1D090032E70E /* Login.storyboard */,
+			);
+			name = Login;
+			sourceTree = "<group>";
+		};
+		E7733CB31F6A1C8F0032E70E /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				E7733CB61F6A1CFA0032E70E /* LoginViewController.swift */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		E7733CB41F6A1C990032E70E /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		E7733CB51F6A1C9D0032E70E /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = View;
 			sourceTree = "<group>";
 		};
 		E7E612221F3DA1740019A64B = {
@@ -124,6 +183,7 @@
 				E7E612571F3DA9180019A64B /* Data */,
 				E7E612581F3DA9180019A64B /* Framework */,
 				E7E6122E1F3DA1740019A64B /* AppDelegate.swift */,
+				E7733CB01F6A1A8C0032E70E /* GoogleService-Info.plist */,
 				E7E612351F3DA1740019A64B /* Assets.xcassets */,
 				E7E612371F3DA1740019A64B /* LaunchScreen.storyboard */,
 				E7E6123A1F3DA1740019A64B /* Info.plist */,
@@ -134,6 +194,7 @@
 		E7E612401F3DA9180019A64B /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				E7733CB21F6A1C660032E70E /* Login */,
 				E7E612461F3DA9180019A64B /* Main */,
 				E7E612421F3DA9180019A64B /* Home */,
 				E7E6124E1F3DA9180019A64B /* News */,
@@ -290,6 +351,9 @@
 		E7E612561F3DA9180019A64B /* Tools */ = {
 			isa = PBXGroup;
 			children = (
+				E7733CCE1F6A3DF90032E70E /* NSArray+Log.h */,
+				E7733CCF1F6A3DF90032E70E /* NSArray+Log.m */,
+				E7733CCD1F6A3DF90032E70E /* Fisc-Bridging-Header.h */,
 			);
 			path = Tools;
 			sourceTree = "<group>";
@@ -393,6 +457,7 @@
 					E7E6122A1F3DA1740019A64B = {
 						CreatedOnToolsVersion = 8.3.3;
 						DevelopmentTeam = XQ4VPYFFH5;
+						LastSwiftMigration = 0830;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -427,10 +492,12 @@
 				E7E612751F3E9E280019A64B /* News.storyboard in Resources */,
 				E7E6128C1F3EA6CE0019A64B /* atm_link.json in Resources */,
 				E7E612361F3DA1740019A64B /* Assets.xcassets in Resources */,
+				E7733CB11F6A1A8C0032E70E /* GoogleService-Info.plist in Resources */,
 				E7E6127D1F3E9EE10019A64B /* Profile.storyboard in Resources */,
 				E7E612711F3DB2520019A64B /* Home.storyboard in Resources */,
 				E7E6128D1F3EA6CE0019A64B /* download_icon_success.json in Resources */,
 				E70694751F49EE6C00E7303D /* MCProfileHeaderView.xib in Resources */,
+				E7733CB91F6A1D090032E70E /* Login.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -489,6 +556,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E7733CD01F6A3DF90032E70E /* NSArray+Log.m in Sources */,
 				E7E612831F3EA1380019A64B /* MCMarketsVC.swift in Sources */,
 				E7E612851F3EA15D0019A64B /* MCProfileVC.swift in Sources */,
 				E7E6127F1F3EA0400019A64B /* MCHomeVC.swift in Sources */,
@@ -500,6 +568,7 @@
 				E7E612731F3DB2E70019A64B /* MCNavigationController.swift in Sources */,
 				E7E6126F1F3DB1F40019A64B /* MCTabBarController.swift in Sources */,
 				E7132D101F4AA0190068A4A0 /* MCAboutVC.swift in Sources */,
+				E7733CB71F6A1CFA0032E70E /* LoginViewController.swift in Sources */,
 				E70694711F49EE2A00E7303D /* MCProfileHeaderView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -616,18 +685,22 @@
 			baseConfigurationReference = 39EE5484F02B3815F8879FAB /* Pods-Fisc.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = XQ4VPYFFH5;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Fisc/Framework",
 					"$(PROJECT_DIR)/build/Debug-iphoneos/lottie-ios",
 					"$(PROJECT_DIR)/build/Debug-iphoneos/pop",
+					"$(PROJECT_DIR)/build/Debug-iphoneos/nanopb",
 				);
 				INFOPLIST_FILE = Fisc/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = org.minecode.Fisc;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Fisc/Classes/Tools/Fisc-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 				USER_HEADER_SEARCH_PATHS = "$(PODS_ROOT)/**";
 			};
@@ -638,18 +711,21 @@
 			baseConfigurationReference = 7BD3BF6639A8006A6177452D /* Pods-Fisc.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = XQ4VPYFFH5;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Fisc/Framework",
 					"$(PROJECT_DIR)/build/Debug-iphoneos/lottie-ios",
 					"$(PROJECT_DIR)/build/Debug-iphoneos/pop",
+					"$(PROJECT_DIR)/build/Debug-iphoneos/nanopb",
 				);
 				INFOPLIST_FILE = Fisc/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = org.minecode.Fisc;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Fisc/Classes/Tools/Fisc-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 				USER_HEADER_SEARCH_PATHS = "$(PODS_ROOT)/**";
 			};
