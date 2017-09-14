@@ -8,6 +8,7 @@
 
 import UIKit
 import Firebase
+import SVProgressHUD
 
 let cellId = "cellId"
 let kHeaderViewMargin: CGFloat = 64
@@ -144,13 +145,16 @@ class MCProfileVC: UIViewController, UITableViewDataSource, UITableViewDelegate 
         do {
             try Auth.auth().signOut()
             
+            SVProgressHUD.show()
+            
             let vc = UIStoryboard.init(name: "Login", bundle: nil).instantiateInitialViewController() as! LoginViewController
             self.present(vc, animated: true, completion: {
                 UIApplication.shared.keyWindow?.rootViewController = vc
+            SVProgressHUD.showSuccess(withStatus: "您已注销")
             })
             
         } catch {
-            print(error.localizedDescription)
+            SVProgressHUD.showError(withStatus: error.localizedDescription ?? "未知错误")
             return
         }
     }

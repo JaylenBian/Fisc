@@ -8,6 +8,7 @@
 
 import UIKit
 import Firebase
+import SVProgressHUD
 
 class LoginViewController: UIViewController, UITextFieldDelegate {
 
@@ -44,6 +45,10 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         // init widget
         registerButton.isEnabled = true
         loginButton.isEnabled = true
+        // SVProgressHUD
+        SVProgressHUD.setDefaultMaskType(.black)
+        SVProgressHUD.setMinimumDismissTimeInterval(1)
+        SVProgressHUD.setMaximumDismissTimeInterval(1)
     }
 }
 
@@ -79,18 +84,20 @@ extension LoginViewController {
                 return
         }
         
+        SVProgressHUD.show(withStatus: "登录中")
         loginButton.isEnabled = false
         Auth.auth().signIn(withEmail: email, password: password) { (user, error) in
             
             if error != nil {
                 
                 let errorMsg = error?.localizedDescription
-                self.showAlert(with: errorMsg ?? "发生未知错误，请联系管理员")
+                SVProgressHUD.showError(withStatus: errorMsg ?? "未知错误")
                 self.loginButton.isEnabled = true
                 
                 return
             }
             
+            SVProgressHUD.showSuccess(withStatus: "登录成功")
             self.loginProcesser(with: user)
         }
     }
@@ -101,18 +108,21 @@ extension LoginViewController {
         else {
             return
         }
-
+        
+        SVProgressHUD.show(withStatus: "注册中")
+        
         self.registerButton.isEnabled = false
         Auth.auth().createUser(withEmail: email, password: password) { (user, error) in
             
             if error != nil {
                 let errorMsg = error?.localizedDescription
-                self.showAlert(with: errorMsg ?? "发生未知错误，请联系管理员")
+                SVProgressHUD.showError(withStatus: errorMsg ?? "未知错误")
                 self.registerButton.isEnabled = true
                 
                 return
             }
             
+            SVProgressHUD.showSuccess(withStatus: "注册成功")
             self.loginProcesser(with: user)
         }
         

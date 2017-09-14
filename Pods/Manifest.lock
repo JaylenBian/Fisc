@@ -57,6 +57,7 @@ PODS:
   - SDWebImage (4.1.0):
     - SDWebImage/Core (= 4.1.0)
   - SDWebImage/Core (4.1.0)
+  - SVProgressHUD (2.2.1)
   - SwiftyJSON (3.1.4)
 
 DEPENDENCIES:
@@ -69,6 +70,7 @@ DEPENDENCIES:
   - lottie-ios
   - pop (~> 1.0)
   - SDWebImage
+  - SVProgressHUD
   - SwiftyJSON
 
 SPEC CHECKSUMS:
@@ -88,8 +90,9 @@ SPEC CHECKSUMS:
   nanopb: 5601e6bca2dbf1ed831b519092ec110f66982ca3
   pop: 82ca6b068ce9278fd350fd9dd09482a0ce9492e6
   SDWebImage: 0e435c14e402a6730315a0fb79f95e68654d55a4
+  SVProgressHUD: db27c54e6e18bc903341661fc9feb55e04905cc4
   SwiftyJSON: c2842d878f95482ffceec5709abc3d05680c0220
 
-PODFILE CHECKSUM: ae473f9ae0b7b839e84cb3e80932f660cbd4395f
+PODFILE CHECKSUM: a0ba447affb24be4d02f59f69269bd21a09b0210
 
 COCOAPODS: 1.2.1
