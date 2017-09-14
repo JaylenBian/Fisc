@@ -33,5 +33,22 @@ class MCStockBannerView: UIView {
     override func awakeFromNib() {
         setupUI()
     }
+    
+    func updateStockInfo(name: String, price: String, updown: String) {
+        // name
+        self.name.text = name
+        // price
+        if let doubleVal = Double(price) {
+            self.price.text = String(format: "%.2lf", doubleVal)
+        } else {
+            self.price.text = price
+        }
+        // updown
+        if let doubleVal = Double(updown) {
+            self.updown.text = String(format: "%.2lf", doubleVal)
+        } else {
+            self.updown.text = updown
+        }
+    }
 
 }

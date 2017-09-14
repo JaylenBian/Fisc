@@ -9,6 +9,7 @@
 import UIKit
 import Lottie
 import Alamofire
+import SwiftyJSON
 
 class MCHomeVC: UIViewController {
     
@@ -71,13 +72,27 @@ class MCHomeVC: UIViewController {
 extension MCHomeVC {
     
     func loadStockInfo() {
-        Alamofire.request(stockBannerUrl).responseJSON { (response) in
+        
+        Alamofire.request(stockBannerUrl).responseData { (response) in
             
-            print("here")
+            guard var resData = response.result.value,
+                var resStr = String(data: resData, encoding: .utf8)
+                else {return}
+            // get the substring of json format
+            resStr = resStr.replacingOccurrences(of: "market_page_back(", with: "")
+            resStr = resStr.replacingOccurrences(of: ");", with: "")
+            // transfer to Data
+            resData = resStr.data(using: .utf8)!
+            // transfer to json
+            let json = JSON(data: resData)
             
-            // Check
-            if let JSON = response.result.value {
-                print(JSON)
+            for i in 0..<9 {
+                
+                let name: String = json[stockBannerId[i]]["name"].stringValue
+                let price: String = json[stockBannerId[i]]["price"].stringValue
+                let updown: String = json[stockBannerId[i]]["updown"].stringValue
+                
+                self.stockBanners[i].updateStockInfo(name: name, price: price, updown: updown)
             }
             
         }
