@@ -12,11 +12,15 @@ import UIKit
 // MARK: - Size Defination
 
 // Screen Defination
-let kScreenWidth = UIScreen.main.bounds.width
-let kScreenHeight = UIScreen.main.bounds.height
+let kScreenWidth        = UIScreen.main.bounds.width
+let kScreenHeight       = UIScreen.main.bounds.height
+let kArticleCellId      = "articleCell"
+let kCommitCellId       = "commitCell"
+
 
 // View Defination
 let kStockBannerWidth: CGFloat = 100
+//let kBannerMargin: CGFloat = 30
 
 
 

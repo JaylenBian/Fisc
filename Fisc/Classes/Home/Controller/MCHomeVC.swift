@@ -52,7 +52,7 @@ class MCHomeVC: UIViewController {
     }
     
     func setupStockBanner() {
-        let kBannerMargin = (self.view.frame.width - 3*kStockBannerWidth) / 4
+        let kBannerMargin = (UIScreen.main.bounds.width - 3*kStockBannerWidth) / 4
         stockBannerContainer.contentSize.width = 10 * kBannerMargin + 9 * kStockBannerWidth
         for i in 0..<9 {
             let stockBanner = Bundle.main.loadNibNamed("MCStockBannerView", owner: nil, options: nil)?.first as! MCStockBannerView

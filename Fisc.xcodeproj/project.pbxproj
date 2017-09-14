@@ -38,6 +38,8 @@
 		E7FE080F1F6AAE8700E1B7BA /* MCStockBannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7FE080E1F6AAE8700E1B7BA /* MCStockBannerView.swift */; };
 		E7FE08111F6AAE9B00E1B7BA /* MCStockBannerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E7FE08101F6AAE9B00E1B7BA /* MCStockBannerView.xib */; };
 		E7FE08131F6AB0DA00E1B7BA /* MCStock.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7FE08121F6AB0DA00E1B7BA /* MCStock.swift */; };
+		E7FE08351F6B1BEC00E1B7BA /* MCRoom.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7FE08341F6B1BEC00E1B7BA /* MCRoom.swift */; };
+		E7FE08371F6B290800E1B7BA /* MCCommit.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7FE08361F6B290800E1B7BA /* MCCommit.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -89,6 +91,8 @@
 		E7FE080E1F6AAE8700E1B7BA /* MCStockBannerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MCStockBannerView.swift; sourceTree = "<group>"; };
 		E7FE08101F6AAE9B00E1B7BA /* MCStockBannerView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MCStockBannerView.xib; sourceTree = "<group>"; };
 		E7FE08121F6AB0DA00E1B7BA /* MCStock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MCStock.swift; sourceTree = "<group>"; };
+		E7FE08341F6B1BEC00E1B7BA /* MCRoom.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MCRoom.swift; sourceTree = "<group>"; };
+		E7FE08361F6B290800E1B7BA /* MCCommit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MCCommit.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -313,6 +317,8 @@
 		E7E6124C1F3DA9180019A64B /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				E7FE08341F6B1BEC00E1B7BA /* MCRoom.swift */,
+				E7FE08361F6B290800E1B7BA /* MCCommit.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -572,6 +578,7 @@
 				E7FE080F1F6AAE8700E1B7BA /* MCStockBannerView.swift in Sources */,
 				E7E6127F1F3EA0400019A64B /* MCHomeVC.swift in Sources */,
 				E706946F1F49E9FD00E7303D /* GlobalMacro.swift in Sources */,
+				E7FE08371F6B290800E1B7BA /* MCCommit.swift in Sources */,
 				E7E6122F1F3DA1740019A64B /* AppDelegate.swift in Sources */,
 				E7132D121F4AA7D80068A4A0 /* MCSourceVC.swift in Sources */,
 				E7E612811F3EA0F20019A64B /* MCNewsTVC.swift in Sources */,
@@ -580,6 +587,7 @@
 				E7E6126F1F3DB1F40019A64B /* MCTabBarController.swift in Sources */,
 				E7FE08131F6AB0DA00E1B7BA /* MCStock.swift in Sources */,
 				E7132D101F4AA0190068A4A0 /* MCAboutVC.swift in Sources */,
+				E7FE08351F6B1BEC00E1B7BA /* MCRoom.swift in Sources */,
 				E7733CB71F6A1CFA0032E70E /* LoginViewController.swift in Sources */,
 				E70694711F49EE2A00E7303D /* MCProfileHeaderView.swift in Sources */,
 			);

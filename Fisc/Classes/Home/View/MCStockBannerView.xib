@@ -66,7 +66,7 @@
                 <outlet property="price" destination="XVH-Jt-TeS" id="xiR-HP-u6V"/>
                 <outlet property="updown" destination="TyE-WV-HLU" id="LHL-Wt-UQZ"/>
             </connections>
-            <point key="canvasLocation" x="4" y="31"/>
+            <point key="canvasLocation" x="13" y="-109"/>
         </view>
     </objects>
 </document>

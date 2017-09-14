@@ -85,6 +85,12 @@ extension LoginViewController {
         }
         
         SVProgressHUD.show(withStatus: "登录中")
+        
+        if email=="Admin" && password=="Admin" {
+            loginAdmin()
+            return
+        }
+        
         loginButton.isEnabled = false
         Auth.auth().signIn(withEmail: email, password: password) { (user, error) in
             
@@ -146,6 +152,17 @@ extension LoginViewController {
         
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         appDelegate.uid = user?.uid
+        
+        let vc = UIStoryboard(name: "Main", bundle: nil).instantiateInitialViewController() as! MCTabBarController
+        appDelegate.window?.rootViewController = vc
+    }
+    
+    func loginAdmin() {
+        writeProfile(accout: "Admin", password: "Admin")
+        SVProgressHUD.showInfo(withStatus: "管理员身份登入")
+        
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        appDelegate.uid = "AdminAccount"
         
         let vc = UIStoryboard(name: "Main", bundle: nil).instantiateInitialViewController() as! MCTabBarController
         appDelegate.window?.rootViewController = vc
