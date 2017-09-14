@@ -35,6 +35,9 @@
 		E7E6128D1F3EA6CE0019A64B /* download_icon_success.json in Resources */ = {isa = PBXBuildFile; fileRef = E7E6128A1F3EA6CE0019A64B /* download_icon_success.json */; };
 		E7E6128E1F3EA6CE0019A64B /* touch_id.json in Resources */ = {isa = PBXBuildFile; fileRef = E7E6128B1F3EA6CE0019A64B /* touch_id.json */; };
 		E7E612B01F3F61FE0019A64B /* Pods_Fisc.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2975AD68B4AEEC1BB36004BD /* Pods_Fisc.framework */; };
+		E7FE080F1F6AAE8700E1B7BA /* MCStockBannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7FE080E1F6AAE8700E1B7BA /* MCStockBannerView.swift */; };
+		E7FE08111F6AAE9B00E1B7BA /* MCStockBannerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E7FE08101F6AAE9B00E1B7BA /* MCStockBannerView.xib */; };
+		E7FE08131F6AB0DA00E1B7BA /* MCStock.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7FE08121F6AB0DA00E1B7BA /* MCStock.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -83,6 +86,9 @@
 		E7E6128F1F3F61660019A64B /* ESTabBarController_swift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ESTabBarController_swift.framework; path = "../../../Library/Developer/Xcode/DerivedData/Fisc-cypifscaphubnvdmriuaopjbanfj/Build/Products/Debug-iphonesimulator/ESTabBarController-swift/ESTabBarController_swift.framework"; sourceTree = "<group>"; };
 		E7E612901F3F61660019A64B /* Lottie.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Lottie.framework; path = "Pods/../build/Debug-iphoneos/lottie-ios/Lottie.framework"; sourceTree = "<group>"; };
 		E7E612911F3F61660019A64B /* pop.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = pop.framework; path = "Pods/../build/Debug-iphoneos/pop/pop.framework"; sourceTree = "<group>"; };
+		E7FE080E1F6AAE8700E1B7BA /* MCStockBannerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MCStockBannerView.swift; sourceTree = "<group>"; };
+		E7FE08101F6AAE9B00E1B7BA /* MCStockBannerView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MCStockBannerView.xib; sourceTree = "<group>"; };
+		E7FE08121F6AB0DA00E1B7BA /* MCStock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MCStock.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -237,6 +243,7 @@
 		E7E612441F3DA9180019A64B /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				E7FE08121F6AB0DA00E1B7BA /* MCStock.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -244,6 +251,8 @@
 		E7E612451F3DA9180019A64B /* View */ = {
 			isa = PBXGroup;
 			children = (
+				E7FE080E1F6AAE8700E1B7BA /* MCStockBannerView.swift */,
+				E7FE08101F6AAE9B00E1B7BA /* MCStockBannerView.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -488,6 +497,7 @@
 				E7E6125E1F3DA9C90019A64B /* Main.storyboard in Resources */,
 				E7E612391F3DA1740019A64B /* LaunchScreen.storyboard in Resources */,
 				E7E6128E1F3EA6CE0019A64B /* touch_id.json in Resources */,
+				E7FE08111F6AAE9B00E1B7BA /* MCStockBannerView.xib in Resources */,
 				E7E612771F3E9E690019A64B /* Markets.storyboard in Resources */,
 				E7E612751F3E9E280019A64B /* News.storyboard in Resources */,
 				E7E6128C1F3EA6CE0019A64B /* atm_link.json in Resources */,
@@ -559,6 +569,7 @@
 				E7733CD01F6A3DF90032E70E /* NSArray+Log.m in Sources */,
 				E7E612831F3EA1380019A64B /* MCMarketsVC.swift in Sources */,
 				E7E612851F3EA15D0019A64B /* MCProfileVC.swift in Sources */,
+				E7FE080F1F6AAE8700E1B7BA /* MCStockBannerView.swift in Sources */,
 				E7E6127F1F3EA0400019A64B /* MCHomeVC.swift in Sources */,
 				E706946F1F49E9FD00E7303D /* GlobalMacro.swift in Sources */,
 				E7E6122F1F3DA1740019A64B /* AppDelegate.swift in Sources */,
@@ -567,6 +578,7 @@
 				E7E612871F3EA4000019A64B /* UIColor+Extension.swift in Sources */,
 				E7E612731F3DB2E70019A64B /* MCNavigationController.swift in Sources */,
 				E7E6126F1F3DB1F40019A64B /* MCTabBarController.swift in Sources */,
+				E7FE08131F6AB0DA00E1B7BA /* MCStock.swift in Sources */,
 				E7132D101F4AA0190068A4A0 /* MCAboutVC.swift in Sources */,
 				E7733CB71F6A1CFA0032E70E /* LoginViewController.swift in Sources */,
 				E70694711F49EE2A00E7303D /* MCProfileHeaderView.swift in Sources */,
