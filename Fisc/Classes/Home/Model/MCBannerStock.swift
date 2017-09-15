@@ -2,13 +2,13 @@
 //  MCStock.swift
 //  Fisc
 //
-//  Created by Minecode on 2017/9/15.
+//  Created by Minecode on 2017/9/14.
 //  Copyright © 2017年 Minecode. All rights reserved.
 //
 
 import UIKit
 
-class MCStock: NSObject {
+class MCBannerStock: NSObject {
     
     var name: String?
     var price: CGFloat? = 0.0
@@ -23,5 +23,4 @@ class MCStock: NSObject {
     override func setValue(_ value: Any?, forUndefinedKey key: String) {
         
     }
-    
 }

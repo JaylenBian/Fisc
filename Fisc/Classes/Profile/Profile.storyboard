@@ -30,7 +30,7 @@
                                     <visualEffectView opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9OW-mY-BQs">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="333.5"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="Rjy-lH-D8S">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="333"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="333.5"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                         </view>
                                         <blurEffect style="light"/>
@@ -89,11 +89,11 @@
                                         <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="nTo-x5-ElZ" id="I7e-nC-z5U">
-                                            <rect key="frame" x="0.0" y="0.0" width="342" height="43"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="342" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="G23-rG-Awn">
-                                                    <rect key="frame" x="15" y="0.0" width="325" height="44"/>
+                                                    <rect key="frame" x="15" y="0.0" width="325" height="43.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
@@ -118,8 +118,10 @@
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="fHn-cf-BJ3"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                        <state key="normal" title="注销"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                        <state key="normal" title="注销">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
                                         <connections>
                                             <action selector="logoutAction:" destination="ubf-Hj-aF6" eventType="touchUpInside" id="FUj-SY-BhU"/>
                                         </connections>
@@ -248,12 +250,24 @@ Fisc——A股分析工具
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Build by Minecode in CQU, all rights reversed." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ysn-cY-s09">
+                                <rect key="frame" x="8" y="647" width="359" height="20"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="20" id="RRd-YQ-Snf"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="EZX-7M-1GM" firstAttribute="top" secondItem="VfH-ye-INo" secondAttribute="bottom" constant="50" id="1fq-iJ-55e"/>
                             <constraint firstItem="VfH-ye-INo" firstAttribute="centerX" secondItem="PBL-Xn-7gV" secondAttribute="centerX" id="BCy-xI-aMz"/>
+                            <constraint firstAttribute="trailing" secondItem="Ysn-cY-s09" secondAttribute="trailing" constant="8" id="Iiw-PQ-tak"/>
+                            <constraint firstAttribute="bottom" secondItem="Ysn-cY-s09" secondAttribute="bottom" id="UfP-Uj-Sl5"/>
                             <constraint firstItem="hvU-Zf-z5G" firstAttribute="top" secondItem="ey5-wp-vXR" secondAttribute="bottom" constant="30" id="ea0-9g-7uU"/>
+                            <constraint firstItem="Ysn-cY-s09" firstAttribute="leading" secondItem="PBL-Xn-7gV" secondAttribute="leading" constant="8" id="g6y-ba-3q4"/>
                             <constraint firstItem="hvU-Zf-z5G" firstAttribute="centerX" secondItem="PBL-Xn-7gV" secondAttribute="centerX" id="jao-hm-Dch"/>
                             <constraint firstItem="VfH-ye-INo" firstAttribute="leading" secondItem="PBL-Xn-7gV" secondAttribute="leading" constant="24" id="jy9-n0-Cwi"/>
                             <constraint firstItem="VfH-ye-INo" firstAttribute="top" secondItem="hvU-Zf-z5G" secondAttribute="bottom" constant="50" id="oxX-GN-4mJ"/>

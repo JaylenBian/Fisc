@@ -14,7 +14,7 @@ class MCStockBannerView: UIView {
     @IBOutlet weak var price: UILabel!
     @IBOutlet weak var updown: UILabel!
     
-    var stock: MCStock?
+    var stock: MCBannerStock?
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
@@ -46,6 +46,8 @@ class MCStockBannerView: UIView {
         // updown
         if let doubleVal = Double(updown) {
             self.updown.text = String(format: "%.2lf", doubleVal)
+            if doubleVal > 0  {self.backgroundColor = UIColor.init(r: 233, g: 78, b: 38)}
+            else {self.backgroundColor = UIColor.init(r: 72, g: 135, b: 92)}
         } else {
             self.updown.text = updown
         }

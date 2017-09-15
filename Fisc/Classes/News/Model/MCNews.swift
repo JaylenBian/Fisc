@@ -1,5 +1,5 @@
 //
-//  MCStock.swift
+//  MCNews.swift
 //  Fisc
 //
 //  Created by Minecode on 2017/9/15.
@@ -8,11 +8,13 @@
 
 import UIKit
 
-class MCStock: NSObject {
+class MCNews: NSObject {
     
-    var name: String?
-    var price: CGFloat? = 0.0
-    var updown: CGFloat?
+    var title: String?
+    var url: String?
+    var imageUrl: String?
+    var createTime: String?
+    var digest: String?
     
     init(dict: [String: Any]) {
         super.init()
@@ -23,5 +25,6 @@ class MCStock: NSObject {
     override func setValue(_ value: Any?, forUndefinedKey key: String) {
         
     }
+    
     
 }

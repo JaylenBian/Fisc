@@ -15,8 +15,15 @@ class MCHomeVC: UIViewController {
     
     @IBOutlet weak var stockBannerContainer: UIScrollView!
     @IBOutlet weak var barRefreshButton: UIBarButtonItem!
+    @IBOutlet weak var stockHeaderView: UIView!
+    @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var tableFooterView: UIView!
+    @IBOutlet weak var stockAnalysisButton: UIButton!
+    @IBOutlet weak var stockCommitsButton: UIButton!
     
-    var stocks: [MCStock] = []
+    
+    var stockBannerTimer: Timer?
+    var stocks: [MCBannerStock] = []
     var stockBanners: [MCStockBannerView] = []
     
     override func viewDidLoad() {
@@ -27,7 +34,6 @@ class MCHomeVC: UIViewController {
         //setupLot()
         setupUI()
         setupStockBanner()
-        
         
         
         
@@ -48,7 +54,12 @@ class MCHomeVC: UIViewController {
     }
     
     func setupUI() {
-        barRefreshButton.action = #selector(loadStockInfo)
+        barRefreshButton.action = #selector(loadBannerStockInfo)
+        
+        let stockSearchButton = self.stockHeaderView.viewWithTag(100) as! UIButton
+        stockSearchButton.addTarget(self, action: #selector(stockSearchHandler), for: .touchUpInside)
+        stockAnalysisButton.addTarget(self, action: #selector(stockAnalysisHandler), for: .touchUpInside)
+        stockCommitsButton.addTarget(self, action: #selector(stockCommitsHandler), for: .touchUpInside)
     }
     
     func setupStockBanner() {
@@ -63,7 +74,9 @@ class MCHomeVC: UIViewController {
             stockBannerContainer.addSubview(stockBanner)
             stockBanners.append(stockBanner)
         }
-        self.loadStockInfo()
+        
+        stockBannerTimer = Timer.scheduledTimer(timeInterval: 5, target: self, selector: #selector(self.loadBannerStockInfo), userInfo: nil, repeats: true)
+        
     }
     
 }
@@ -71,7 +84,7 @@ class MCHomeVC: UIViewController {
 // MARK: - main logic function 
 extension MCHomeVC {
     
-    func loadStockInfo() {
+    func loadBannerStockInfo() {
         
         Alamofire.request(stockBannerUrl).responseData { (response) in
             
@@ -96,6 +109,19 @@ extension MCHomeVC {
             }
             
         }
+    }
+    
+    func stockSearchHandler() {
+        let vc = UIStoryboard(name: "Home", bundle: nil).instantiateViewController(withIdentifier: "stockSearchVC")
+        self.present(vc, animated: true, completion: nil)
+    }
+    
+    func stockAnalysisHandler() {
+        
+    }
+    
+    func stockCommitsHandler() {
+        self.tabBarController?.selectedIndex = 2
     }
     
 }
