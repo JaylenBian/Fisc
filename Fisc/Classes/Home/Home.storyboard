@@ -319,14 +319,22 @@
                                 </constraints>
                             </view>
                             <textField opaque="NO" clipsSubviews="YES" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="请输入股票代码" textAlignment="center" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="FeI-NZ-9Cx">
-                                <rect key="frame" x="0.0" y="64" width="375" height="30"/>
+                                <rect key="frame" x="0.0" y="64" width="350" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="PTa-30-5e2"/>
                                 </constraints>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" keyboardType="numberPad" returnKeyType="search"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad" enablesReturnKeyAutomatically="YES"/>
                             </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cnt-MM-bWz" userLabel="Search Button">
+                                <rect key="frame" x="350" y="66.5" width="25" height="25"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="25" id="E82-5v-WRp"/>
+                                    <constraint firstAttribute="height" constant="25" id="nbQ-fE-BDP"/>
+                                </constraints>
+                                <state key="normal" image="home_stock_search"/>
+                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="股票推荐" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KIu-KJ-abz">
                                 <rect key="frame" x="16" y="94" width="343" height="44"/>
                                 <constraints>
@@ -378,10 +386,11 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="Cnt-MM-bWz" firstAttribute="centerY" secondItem="FeI-NZ-9Cx" secondAttribute="centerY" id="1C7-8s-fIF"/>
                             <constraint firstItem="7EK-jU-EKv" firstAttribute="leading" secondItem="ZJF-vF-UqY" secondAttribute="leading" id="5VA-8z-6oK"/>
                             <constraint firstAttribute="trailing" secondItem="7EK-jU-EKv" secondAttribute="trailing" id="5g0-ug-piQ"/>
+                            <constraint firstAttribute="trailing" secondItem="Cnt-MM-bWz" secondAttribute="trailing" id="9x3-zZ-MiU"/>
                             <constraint firstItem="FeI-NZ-9Cx" firstAttribute="top" secondItem="KwL-5i-iRn" secondAttribute="bottom" id="H4R-cC-E43"/>
-                            <constraint firstAttribute="trailing" secondItem="FeI-NZ-9Cx" secondAttribute="trailing" id="HE4-se-d92"/>
                             <constraint firstAttribute="trailing" secondItem="KIu-KJ-abz" secondAttribute="trailing" constant="16" id="OTO-gU-YX4"/>
                             <constraint firstAttribute="trailing" secondItem="KwL-5i-iRn" secondAttribute="trailing" id="RVW-Fq-fca"/>
                             <constraint firstItem="FeI-NZ-9Cx" firstAttribute="leading" secondItem="ZJF-vF-UqY" secondAttribute="leading" id="dba-0S-20p"/>
@@ -391,6 +400,7 @@
                             <constraint firstItem="KwL-5i-iRn" firstAttribute="leading" secondItem="ZJF-vF-UqY" secondAttribute="leading" id="jXp-zs-IDX"/>
                             <constraint firstItem="KIu-KJ-abz" firstAttribute="top" secondItem="FeI-NZ-9Cx" secondAttribute="bottom" id="mZV-xN-fNS"/>
                             <constraint firstItem="KwL-5i-iRn" firstAttribute="top" secondItem="ZJF-vF-UqY" secondAttribute="top" constant="20" id="mby-MS-tPn"/>
+                            <constraint firstItem="Cnt-MM-bWz" firstAttribute="leading" secondItem="FeI-NZ-9Cx" secondAttribute="trailing" id="qGR-ud-qH8"/>
                             <constraint firstAttribute="trailing" secondItem="7io-Fm-sA1" secondAttribute="trailing" id="sYB-xf-BcE"/>
                             <constraint firstItem="3MO-tM-QTw" firstAttribute="top" secondItem="7io-Fm-sA1" secondAttribute="bottom" id="vM7-hO-O8o"/>
                             <constraint firstItem="7io-Fm-sA1" firstAttribute="leading" secondItem="ZJF-vF-UqY" secondAttribute="leading" id="yoC-jW-cca"/>
@@ -398,6 +408,7 @@
                     </view>
                     <connections>
                         <outlet property="closeButton" destination="sO8-8J-IYq" id="UXd-yY-TBR"/>
+                        <outlet property="searchButton" destination="Cnt-MM-bWz" id="eMu-Vd-SQm"/>
                         <outlet property="searchTextField" destination="FeI-NZ-9Cx" id="U7o-RR-5gg"/>
                         <outlet property="tableView" destination="7io-Fm-sA1" id="dRt-49-ARe"/>
                     </connections>
@@ -409,7 +420,7 @@
         <!--Stock InfoVC-->
         <scene sceneID="p33-n3-Qj9">
             <objects>
-                <viewController id="IXl-ri-Auz" customClass="MCStockInfoVC" customModule="Fisc" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="stockInfoVC" id="IXl-ri-Auz" customClass="MCStockInfoVC" customModule="Fisc" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="HUM-ce-iHn"/>
                         <viewControllerLayoutGuide type="bottom" id="Bgg-dO-Sme"/>

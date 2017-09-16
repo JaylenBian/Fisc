@@ -7,16 +7,20 @@
 //
 
 import UIKit
+import SwiftyJSON
+import Alamofire
 import SVProgressHUD
 
 
-class MCStockSearchVC: UIViewController, UITableViewDataSource, UITableViewDelegate, UITextFieldDelegate {
+class MCStockSearchVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     @IBOutlet weak var closeButton: UIBarButtonItem!
     @IBOutlet weak var searchTextField: UITextField!
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var searchButton: UIButton!
     
-    var recommands: [MCStock] = []
+    
+    var recommands: [MCSimpleStock] = []
     
     
     override func viewDidLoad() {
@@ -30,12 +34,14 @@ class MCStockSearchVC: UIViewController, UITableViewDataSource, UITableViewDeleg
     
     func setupUI() {
         closeButton.action = #selector(self.closeHandler)
+        
+        searchButton.addTarget(self, action: #selector(searchAction), for: .touchUpInside)
     }
     
     func loadRecommands() {
         recommands = [
-            MCStock(name: "上海机场", code: "0600009"),
-            MCStock(name: "东风汽车", code: "0600006")
+            MCSimpleStock(name: "上海机场", code: "0600009"),
+            MCSimpleStock(name: "东风汽车", code: "0600006")
         ]
         self.tableView.reloadData()
     }
@@ -46,20 +52,8 @@ class MCStockSearchVC: UIViewController, UITableViewDataSource, UITableViewDeleg
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.view.endEditing(true)
+        searchTextField.resignFirstResponder()
     }
-    
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        textField.resignFirstResponder()
-        
-        if textField.tag == 1 {
-            if let text = textField.text {
-                print(text)
-            }
-        }
-        
-        return true
-    }
-    
     
 }
 
@@ -69,6 +63,97 @@ extension MCStockSearchVC {
     
     func closeHandler() {
         self.dismiss(animated: true, completion: nil)
+    }
+    
+    func searchAction() {
+        guard let text = searchTextField.text else {return}
+        
+        if !isPurnInt(string: text) {
+            SVProgressHUD.showError(withStatus: "股票代码必须为数字")
+            return
+        }
+        
+    }
+    
+    func searchSH(with code: String) {
+        // 0 - Shanghai, 1 - Shenzhen
+        let url = "http://api.money.126.net/data/feed/0" + code + ",clear_cache_KIPENVUH"
+        
+        SVProgressHUD.show(withStatus: "加载中")
+        Alamofire.request(url).responseData { (response) in
+            
+            guard var resData = response.result.value,
+                var resStr = String(data: resData, encoding: .utf8)
+                else {return}
+            // get the substring of json format
+            resStr = resStr.replacingOccurrences(of: "_ntes_quote_callback(", with: "")
+            resStr = resStr.replacingOccurrences(of: ");", with: "")
+            // transfer to Data
+            resData = resStr.data(using: .utf8)!
+            // transfer to json
+            let json = JSON(data: resData)
+            
+            // if not SH
+            if json.count == 0 {
+                self.searchSZ(with: code)
+            }
+            else {
+                SVProgressHUD.dismiss()
+                let stockJsonItem = json["0"+code].dictionaryObject
+                let stockItem = MCStock(dict: stockJsonItem!)
+                // init MCStockInfoVC
+                let vc = UIStoryboard(name: "Home", bundle: nil).instantiateViewController(withIdentifier: "stockInfoVC") as! MCStockInfoVC
+                vc.stock = stockItem
+                vc.delegate = self.presentingViewController as! MCHomeVC
+                
+            }
+            
+        }
+    }
+    
+    func searchSZ(with code: String) {
+        // 0 - Shanghai, 1 - Shenzhen
+        let url = "http://api.money.126.net/data/feed/1" + code + ",clear_cache_KIPENVUH"
+        
+        SVProgressHUD.show(withStatus: "加载中")
+        Alamofire.request(url).responseData { (response) in
+            
+            guard var resData = response.result.value,
+                var resStr = String(data: resData, encoding: .utf8)
+                else {return}
+            // get the substring of json format
+            resStr = resStr.replacingOccurrences(of: "_ntes_quote_callback(", with: "")
+            resStr = resStr.replacingOccurrences(of: ");", with: "")
+            // transfer to Data
+            resData = resStr.data(using: .utf8)!
+            // transfer to json
+            let json = JSON(data: resData)
+            
+            // if not SZ
+            if json.count == 0 {
+                SVProgressHUD.showError(withStatus: "查找失败")
+            }
+            else {
+                SVProgressHUD.dismiss()
+                let stockJsonItem = json["1"+code].dictionaryObject
+                let stockItem = MCStock(dict: stockJsonItem!)
+            }
+            
+        }
+    }
+    
+    func setStockInfo() {
+        
+    }
+    
+    func isPurnInt(string: String) -> Bool {
+        
+        let scan: Scanner = Scanner(string: string)
+        
+        var val:Int = 0
+        
+        return scan.scanInt(&val) && scan.isAtEnd
+        
     }
     
 }

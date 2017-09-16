@@ -10,17 +10,22 @@ import UIKit
 
 
 protocol MCStockInfoDelegate {
-    func stockInfo(processWith stock: MCStock)
+    func stockInfo(like stock: MCStock)
 }
 
 class MCStockInfoVC: UIViewController {
 
     var delegate: MCStockInfoDelegate?
-    var code: String?
+    var stock: MCStock?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        setupUI()
+        
+    }
+    
+    func setupUI() {
         
     }
     

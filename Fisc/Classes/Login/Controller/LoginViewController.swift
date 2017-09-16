@@ -179,7 +179,6 @@ extension LoginViewController {
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         let curTag = textField.tag
-        print(curTag)
         if curTag < 3 {
 //            textField.resignFirstResponder()
             self.inputContainer.viewWithTag(curTag+1)?.becomeFirstResponder()

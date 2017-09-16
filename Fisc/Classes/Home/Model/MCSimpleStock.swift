@@ -1,21 +1,18 @@
 //
-//  MCStock.swift
+//  MCSimpleStock.swift
 //  Fisc
 //
-//  Created by Minecode on 2017/9/15.
+//  Created by Minecode on 2017/9/16.
 //  Copyright © 2017年 Minecode. All rights reserved.
 //
 
 import UIKit
 
-class MCStock: NSObject {
-    
+class MCSimpleStock: NSObject {
+
     var name: String?
-    var price: CGFloat? = 0.0
-    var updown: CGFloat?
     var code: String?
-    var time: String?
-    var symbol: String?
+    
     
     init(dict: [String: Any]) {
         super.init()
@@ -25,6 +22,11 @@ class MCStock: NSObject {
     
     override func setValue(_ value: Any?, forUndefinedKey key: String) {
         
+    }
+    
+    init(name: String, code: String) {
+        self.name = name
+        self.code = code
     }
     
 }
