@@ -15,5 +15,6 @@ target 'Fisc' do
   pod 'SwiftyJSON'
   pod 'SVProgressHUD'
   pod 'MJRefresh'
+  pod 'TKRadarChart'
 
 end
