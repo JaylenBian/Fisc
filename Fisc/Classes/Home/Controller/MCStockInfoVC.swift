@@ -61,5 +61,12 @@ class MCStockInfoVC: UIViewController {
         self.delegate?.stockInfo(like: self.stock!)
     }
     
+}
 
+// MARK: - K-line lmage view implemention
+extension MCStockInfoVC {
+    
+    // FIXME: - K-Line API building, implement after Oct.1
+    // API address: "http://api.money.126.net/chart/" + code + ",money.api"
+    
 }

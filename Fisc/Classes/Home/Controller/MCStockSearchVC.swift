@@ -212,7 +212,6 @@ extension MCStockSearchVC {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let text = recommands[indexPath.row].code
-        print(text)
         self.searchSH(with: text ?? "")
     }
     

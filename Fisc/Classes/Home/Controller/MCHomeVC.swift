@@ -10,6 +10,7 @@ import UIKit
 import Lottie
 import Alamofire
 import SwiftyJSON
+import MJRefresh
 
 class MCHomeVC: UIViewController, MCStockInfoDelegate, UITableViewDelegate, UITableViewDataSource {
     
@@ -39,6 +40,14 @@ class MCHomeVC: UIViewController, MCStockInfoDelegate, UITableViewDelegate, UITa
         
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        
+        //self.tableView.mj_header.beginRefreshing()
+        //loadStocks()
+    }
+    
     func setupLot() {
         if let animationView: LOTAnimationView = LOTAnimationView(name: "atm_link") {
             animationView.frame = CGRect(x: 0, y: 0, width: self.view.bounds.width, height: 400)
@@ -60,6 +69,8 @@ class MCHomeVC: UIViewController, MCStockInfoDelegate, UITableViewDelegate, UITa
         stockSearchButton.addTarget(self, action: #selector(stockSearchHandler), for: .touchUpInside)
         stockAnalysisButton.addTarget(self, action: #selector(stockAnalysisHandler), for: .touchUpInside)
         stockCommitsButton.addTarget(self, action: #selector(stockCommitsHandler), for: .touchUpInside)
+        
+        //self.tableView.mj_header = MJRefreshNormalHeader(refreshingTarget: self, refreshingAction: #selector(loadStocks))
     }
     
     func setupStockBanner() {
@@ -117,7 +128,8 @@ extension MCHomeVC {
     }
     
     func stockAnalysisHandler() {
-        
+        let vc = UIStoryboard(name: "Home", bundle: nil).instantiateViewController(withIdentifier: "reportVC")
+        self.navigationController?.pushViewController(vc, animated: true)
     }
     
     func stockCommitsHandler() {
@@ -131,6 +143,41 @@ extension MCHomeVC {
         vc.loadRoomId()
     }
     
+    func loadStocks() {
+//        self.tableView.mj_header.beginRefreshing()
+        stocks = Array.init(repeating: MCStock(), count: favorite.count)
+        for i in 0..<favorite.count {
+            loadStockInfo(with: favorite[i], toIdx: i)
+        }
+        self.tableView.reloadData()
+        self.tableView.mj_header.endRefreshing()
+    }
+    
+    func loadStockInfo(with code: String, toIdx des: Int) {
+        let url = "http://api.money.126.net/data/feed/" + code + ",clear_cache_KIPENVUH"
+        
+        Alamofire.request(url).responseData { (response) in
+            
+            guard var resData = response.result.value,
+                var resStr = String(data: resData, encoding: .utf8)
+                else {return}
+            // get the substring of json format
+            resStr = resStr.replacingOccurrences(of: "_ntes_quote_callback(", with: "")
+            resStr = resStr.replacingOccurrences(of: ");", with: "")
+            // transfer to Data
+            resData = resStr.data(using: .utf8)!
+            // transfer to json
+            let json = JSON(data: resData)
+            
+            guard let stockJsonItem = json[code].dictionaryObject
+            else {
+                return
+            }
+            let stockItem = MCStock(dict: stockJsonItem)
+            self.stocks.append(stockItem)
+        }
+    }
+    
 }
 
 // MARK: - delegate implemention
@@ -142,7 +189,51 @@ extension MCHomeVC {
         }
     }
     
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
     
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return favorite.count
+    }
     
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "stockCell")
+        
+        // get widget
+        let nameLabel = cell?.viewWithTag(1) as! UILabel
+        let idLabel = cell?.viewWithTag(2) as! UILabel
+        let priceLabel = cell?.viewWithTag(3) as! UILabel
+        let updownLabel = cell?.viewWithTag(4) as! UILabel
+        let updownView = cell?.viewWithTag(5) as! UIView
+        
+        // set info
+        let idx = indexPath.row
+        nameLabel.text = stocks[idx].name
+        idLabel.text = stocks[idx].symbol
+        updownLabel.text = stocks[idx].updown
+        priceLabel.text = stocks[idx].price
+        
+        return cell!
+    }
+    
+    func tableView(_ tableView: UITableView, titleForDeleteConfirmationButtonForRowAt indexPath: IndexPath) -> String? {
+        return "取消关注"
+    }
+    
+    func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCellEditingStyle {
+        return .delete
+    }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == UITableViewCellEditingStyle.delete {
+            favorite.remove(at: indexPath.row)
+            stocks.remove(at: indexPath.row)
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 80
+    }
     
 }

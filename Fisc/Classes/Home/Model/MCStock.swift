@@ -18,6 +18,10 @@ class MCStock: NSObject {
     var symbol: String?
     var percent: String?
     
+    override init() {
+        super.init()
+    }
+    
     init(dict: [String: Any]) {
         super.init()
         

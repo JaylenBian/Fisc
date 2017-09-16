@@ -46,6 +46,9 @@
 		E7FE083F1F6CADD000E1B7BA /* MCStockInfoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7FE083E1F6CADD000E1B7BA /* MCStockInfoVC.swift */; };
 		E7FE08431F6CED9C00E1B7BA /* MCNewsPageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7FE08421F6CED9C00E1B7BA /* MCNewsPageVC.swift */; };
 		E7FE08451F6D046B00E1B7BA /* MCSimpleStock.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7FE08441F6D046B00E1B7BA /* MCSimpleStock.swift */; };
+		E7FE08471F6D4CCF00E1B7BA /* MCReportVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7FE08461F6D4CCF00E1B7BA /* MCReportVC.swift */; };
+		E7FE084C1F6D517F00E1B7BA /* 600006.json in Resources */ = {isa = PBXBuildFile; fileRef = E7FE084B1F6D517F00E1B7BA /* 600006.json */; };
+		E7FE084E1F6D519C00E1B7BA /* MCReport.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7FE084D1F6D519C00E1B7BA /* MCReport.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -105,6 +108,9 @@
 		E7FE083E1F6CADD000E1B7BA /* MCStockInfoVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MCStockInfoVC.swift; sourceTree = "<group>"; };
 		E7FE08421F6CED9C00E1B7BA /* MCNewsPageVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MCNewsPageVC.swift; sourceTree = "<group>"; };
 		E7FE08441F6D046B00E1B7BA /* MCSimpleStock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MCSimpleStock.swift; sourceTree = "<group>"; };
+		E7FE08461F6D4CCF00E1B7BA /* MCReportVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MCReportVC.swift; sourceTree = "<group>"; };
+		E7FE084B1F6D517F00E1B7BA /* 600006.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = 600006.json; path = Reports/600006.json; sourceTree = "<group>"; };
+		E7FE084D1F6D519C00E1B7BA /* MCReport.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MCReport.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -252,6 +258,7 @@
 			isa = PBXGroup;
 			children = (
 				E7E6127E1F3EA0400019A64B /* MCHomeVC.swift */,
+				E7FE08461F6D4CCF00E1B7BA /* MCReportVC.swift */,
 				E7FE083E1F6CADD000E1B7BA /* MCStockInfoVC.swift */,
 				E7FE083C1F6BC0E100E1B7BA /* MCStockSearchVC.swift */,
 			);
@@ -263,6 +270,7 @@
 			children = (
 				E7FE08121F6AB0DA00E1B7BA /* MCBannerStock.swift */,
 				E7FE083A1F6BBFC900E1B7BA /* MCStock.swift */,
+				E7FE084D1F6D519C00E1B7BA /* MCReport.swift */,
 				E7FE08441F6D046B00E1B7BA /* MCSimpleStock.swift */,
 			);
 			path = Model;
@@ -394,6 +402,7 @@
 		E7E612571F3DA9180019A64B /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				E7FE08481F6D514500E1B7BA /* Reports */,
 				E7E612881F3EA6CE0019A64B /* Lottie */,
 			);
 			path = Data;
@@ -451,6 +460,14 @@
 				E7E6128B1F3EA6CE0019A64B /* touch_id.json */,
 			);
 			path = Lottie;
+			sourceTree = "<group>";
+		};
+		E7FE08481F6D514500E1B7BA /* Reports */ = {
+			isa = PBXGroup;
+			children = (
+				E7FE084B1F6D517F00E1B7BA /* 600006.json */,
+			);
+			name = Reports;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -531,6 +548,7 @@
 				E7E612711F3DB2520019A64B /* Home.storyboard in Resources */,
 				E7E6128D1F3EA6CE0019A64B /* download_icon_success.json in Resources */,
 				E70694751F49EE6C00E7303D /* MCProfileHeaderView.xib in Resources */,
+				E7FE084C1F6D517F00E1B7BA /* 600006.json in Resources */,
 				E7733CB91F6A1D090032E70E /* Login.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -593,6 +611,7 @@
 				E7733CD01F6A3DF90032E70E /* NSArray+Log.m in Sources */,
 				E7E612831F3EA1380019A64B /* MCMarketsVC.swift in Sources */,
 				E7E612851F3EA15D0019A64B /* MCProfileVC.swift in Sources */,
+				E7FE084E1F6D519C00E1B7BA /* MCReport.swift in Sources */,
 				E7FE080F1F6AAE8700E1B7BA /* MCStockBannerView.swift in Sources */,
 				E7FE083B1F6BBFC900E1B7BA /* MCStock.swift in Sources */,
 				E7FE08391F6B3C1F00E1B7BA /* MCNews.swift in Sources */,
@@ -614,6 +633,7 @@
 				E7FE08351F6B1BEC00E1B7BA /* MCRoom.swift in Sources */,
 				E7733CB71F6A1CFA0032E70E /* LoginViewController.swift in Sources */,
 				E70694711F49EE2A00E7303D /* MCProfileHeaderView.swift in Sources */,
+				E7FE08471F6D4CCF00E1B7BA /* MCReportVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
