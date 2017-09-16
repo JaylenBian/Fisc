@@ -11,7 +11,7 @@ import Lottie
 import Alamofire
 import SwiftyJSON
 
-class MCHomeVC: UIViewController, MCStockInfoDelegate {
+class MCHomeVC: UIViewController, MCStockInfoDelegate, UITableViewDelegate, UITableViewDataSource {
     
     @IBOutlet weak var stockBannerContainer: UIScrollView!
     @IBOutlet weak var barRefreshButton: UIBarButtonItem!
@@ -36,8 +36,6 @@ class MCHomeVC: UIViewController, MCStockInfoDelegate {
         //setupLot()
         setupUI()
         setupStockBanner()
-        
-        
         
     }
     
@@ -139,7 +137,12 @@ extension MCHomeVC {
 extension MCHomeVC {
     
     func stockInfo(like stock: MCStock) {
-        self.favorite.append(stock.symbol)
+        if !favorite.contains(stock.code!) {
+            favorite.append(stock.code!)
+        }
     }
+    
+    
+    
     
 }

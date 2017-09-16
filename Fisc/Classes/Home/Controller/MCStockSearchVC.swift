@@ -40,8 +40,10 @@ class MCStockSearchVC: UIViewController, UITableViewDataSource, UITableViewDeleg
     
     func loadRecommands() {
         recommands = [
-            MCSimpleStock(name: "上海机场", code: "0600009"),
-            MCSimpleStock(name: "东风汽车", code: "0600006")
+            MCSimpleStock(name: "上海机场", code: "600009"),
+            MCSimpleStock(name: "东风汽车", code: "600006"),
+            MCSimpleStock(name: "中正100A", code: "150012"),
+            MCSimpleStock(name: "邯郸钢铁", code: "600001")
         ]
         self.tableView.reloadData()
     }
@@ -73,6 +75,8 @@ extension MCStockSearchVC {
             return
         }
         
+        self.searchSH(with: text)
+        
     }
     
     func searchSH(with code: String) {
@@ -99,13 +103,24 @@ extension MCStockSearchVC {
             }
             else {
                 SVProgressHUD.dismiss()
-                let stockJsonItem = json["0"+code].dictionaryObject
-                let stockItem = MCStock(dict: stockJsonItem!)
+                guard let stockJsonItem = json["0"+code].dictionaryObject
+                else {
+                        SVProgressHUD.showError(withStatus: "内部错误")
+                        return
+                }
+                let stockItem = MCStock(dict: stockJsonItem)
                 // init MCStockInfoVC
                 let vc = UIStoryboard(name: "Home", bundle: nil).instantiateViewController(withIdentifier: "stockInfoVC") as! MCStockInfoVC
                 vc.stock = stockItem
-                vc.delegate = self.presentingViewController as! MCHomeVC
                 
+                let tvc = self.presentingViewController as! MCTabBarController
+                let nvc = tvc.viewControllers?.first as! MCNavigationController
+                let homeVc = nvc.viewControllers.first as! MCHomeVC
+                vc.delegate = homeVc
+                
+                self.dismiss(animated: true, completion: {
+                    homeVc.navigationController?.pushViewController(vc, animated: true)
+                })
             }
             
         }
@@ -135,8 +150,25 @@ extension MCStockSearchVC {
             }
             else {
                 SVProgressHUD.dismiss()
-                let stockJsonItem = json["1"+code].dictionaryObject
-                let stockItem = MCStock(dict: stockJsonItem!)
+                guard let stockJsonItem = json["1"+code].dictionaryObject
+                else {
+                    SVProgressHUD.showError(withStatus: "内部错误")
+                    return
+                }
+                let stockItem = MCStock(dict: stockJsonItem)
+                // init MCStockInfoVC
+                let vc = UIStoryboard(name: "Home", bundle: nil).instantiateViewController(withIdentifier: "stockInfoVC") as! MCStockInfoVC
+                vc.stock = stockItem
+                
+                let tvc = self.presentingViewController as! MCTabBarController
+                let nvc = tvc.viewControllers?.first as! MCNavigationController
+                let homeVc = nvc.viewControllers.first as! MCHomeVC
+                vc.delegate = homeVc
+                
+                self.dismiss(animated: true, completion: { 
+                    homeVc.navigationController?.pushViewController(vc, animated: true)
+                })
+                
             }
             
         }
@@ -179,7 +211,9 @@ extension MCStockSearchVC {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
+        let text = recommands[indexPath.row].code
+        print(text)
+        self.searchSH(with: text ?? "")
     }
     
 }

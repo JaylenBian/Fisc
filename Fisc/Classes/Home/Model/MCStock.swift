@@ -11,20 +11,29 @@ import UIKit
 class MCStock: NSObject {
     
     var name: String?
-    var price: CGFloat? = 0.0
-    var updown: CGFloat?
+    var price: String?
+    var updown: String?
     var code: String?
     var time: String?
     var symbol: String?
+    var percent: String?
     
     init(dict: [String: Any]) {
         super.init()
         
-        setValuesForKeys(dict)
+        
+        setOtherValue(dict: dict)
+        
     }
     
-    override func setValue(_ value: Any?, forUndefinedKey key: String) {
-        
+    func setOtherValue(dict: [String: Any]) {
+        self.price = String.init(format: "%@", dict["price"] as! CVarArg)
+        self.updown = String.init(format: "%@", dict["updown"] as! CVarArg)
+        self.percent = String.init(format: "%@", dict["percent"] as! CVarArg)
+        self.name = String.init(format: "%@", dict["name"] as! CVarArg)
+        self.time = String.init(format: "%@", dict["time"] as! CVarArg)
+        self.code = String.init(format: "%@", dict["code"] as! CVarArg)
+        self.symbol = String.init(format: "%@", dict["symbol"] as! CVarArg)
     }
     
 }

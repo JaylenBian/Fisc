@@ -14,7 +14,14 @@ protocol MCStockInfoDelegate {
 }
 
 class MCStockInfoVC: UIViewController {
-
+    
+    @IBOutlet weak var headerCotainer: UIView!
+    @IBOutlet weak var priceLabel: UILabel!
+    @IBOutlet weak var dataLabel: UILabel!
+    @IBOutlet weak var likeButton: UIButton!
+    
+    
+    
     var delegate: MCStockInfoDelegate?
     var stock: MCStock?
     
@@ -22,17 +29,36 @@ class MCStockInfoVC: UIViewController {
         super.viewDidLoad()
         
         setupUI()
+        loadStockInfo()
         
     }
     
     func setupUI() {
+        self.likeButton.addTarget(self, action: #selector(likeHandler), for: .touchUpInside)
+        self.navigationController?.navigationBar.barTintColor = self.headerCotainer.backgroundColor
+    }
+    
+    func loadStockInfo() {
+        self.navigationItem.title = stock?.name
+        self.priceLabel.text = stock?.price
+        self.dataLabel.text = String(format: "%@    %@    %@", (stock?.updown)!, (stock?.percent)!, (stock?.time)!)
         
     }
     
-    convenience init(withCode code: String) {
+    override func viewWillDisappear(_ animated: Bool) {
+        self.navigationController?.navigationBar.barTintColor = UIColor(r: 255, g: 85, b: 42)
+        
+        super.viewWillDisappear(animated)
+    }
+    
+    convenience init(withStock stock: MCStock) {
         self.init()
         
-        self.code = code
+        self.stock = stock
+    }
+    
+    func likeHandler() {
+        self.delegate?.stockInfo(like: self.stock!)
     }
     
 
