@@ -43,6 +43,7 @@
 		E7FE08391F6B3C1F00E1B7BA /* MCNews.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7FE08381F6B3C1F00E1B7BA /* MCNews.swift */; };
 		E7FE083B1F6BBFC900E1B7BA /* MCStock.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7FE083A1F6BBFC900E1B7BA /* MCStock.swift */; };
 		E7FE083D1F6BC0E100E1B7BA /* MCStockSearchVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7FE083C1F6BC0E100E1B7BA /* MCStockSearchVC.swift */; };
+		E7FE083F1F6CADD000E1B7BA /* MCStockInfoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7FE083E1F6CADD000E1B7BA /* MCStockInfoVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -99,6 +100,7 @@
 		E7FE08381F6B3C1F00E1B7BA /* MCNews.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MCNews.swift; sourceTree = "<group>"; };
 		E7FE083A1F6BBFC900E1B7BA /* MCStock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MCStock.swift; sourceTree = "<group>"; };
 		E7FE083C1F6BC0E100E1B7BA /* MCStockSearchVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MCStockSearchVC.swift; sourceTree = "<group>"; };
+		E7FE083E1F6CADD000E1B7BA /* MCStockInfoVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MCStockInfoVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -246,6 +248,7 @@
 			isa = PBXGroup;
 			children = (
 				E7E6127E1F3EA0400019A64B /* MCHomeVC.swift */,
+				E7FE083E1F6CADD000E1B7BA /* MCStockInfoVC.swift */,
 				E7FE083C1F6BC0E100E1B7BA /* MCStockSearchVC.swift */,
 			);
 			path = Controller;
@@ -588,6 +591,7 @@
 				E7FE083B1F6BBFC900E1B7BA /* MCStock.swift in Sources */,
 				E7FE08391F6B3C1F00E1B7BA /* MCNews.swift in Sources */,
 				E7E6127F1F3EA0400019A64B /* MCHomeVC.swift in Sources */,
+				E7FE083F1F6CADD000E1B7BA /* MCStockInfoVC.swift in Sources */,
 				E706946F1F49E9FD00E7303D /* GlobalMacro.swift in Sources */,
 				E7FE08371F6B290800E1B7BA /* MCCommit.swift in Sources */,
 				E7E6122F1F3DA1740019A64B /* AppDelegate.swift in Sources */,

@@ -49,10 +49,11 @@ extension MCMarketsVC {
     func loadRoomId() {
         let url = "http://i.money.163.com/app/api/info/v2/live.json?appversion=ios_3.3.3&"
         Alamofire.request(url).responseJSON { (response) in
-            SVProgressHUD.dismiss()
+            
             if let value = response.result.value {
                 let json = JSON(value)
-                let roomId = json["data"]["roomId"].stringValue 
+                let roomId = json["data"]["roomId"].stringValue
+                
                 self.loadInfo(with: roomId)
             }
         }
@@ -98,6 +99,7 @@ extension MCMarketsVC {
             let commitItem = MCCommit(content: content, time: time)
             commits.append(commitItem)
         }
+        SVProgressHUD.dismiss()
         refresher.endRefreshing()
         self.tableView.reloadData()
     }

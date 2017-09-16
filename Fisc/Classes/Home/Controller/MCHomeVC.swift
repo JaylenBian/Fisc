@@ -23,8 +23,10 @@ class MCHomeVC: UIViewController {
     
     
     var stockBannerTimer: Timer?
-    var stocks: [MCBannerStock] = []
+//    var stocksInBanner: [MCBannerStock] = []
     var stockBanners: [MCStockBannerView] = []
+    var stocks: [MCStock] = []
+    var favorite: [String] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -121,7 +123,13 @@ extension MCHomeVC {
     }
     
     func stockCommitsHandler() {
-        self.tabBarController?.selectedIndex = 2
+        if (self.tabBarController?.viewControllers?.count)! >= 3 {
+            self.tabBarController?.selectedIndex = 2
+        }
+        
+        let nvc = self.tabBarController?.viewControllers?[2] as! UINavigationController
+        let vc  = nvc.viewControllers[0] as! MCMarketsVC
+        vc.loadRoomId()
     }
     
 }

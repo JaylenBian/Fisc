@@ -13,6 +13,8 @@ class MCStock: NSObject {
     var name: String?
     var price: CGFloat? = 0.0
     var updown: CGFloat?
+    var code: String?
+    
     
     init(dict: [String: Any]) {
         super.init()
@@ -22,6 +24,11 @@ class MCStock: NSObject {
     
     override func setValue(_ value: Any?, forUndefinedKey key: String) {
         
+    }
+    
+    init(name: String, code: String) {
+        self.name = name
+        self.code = code
     }
     
 }
