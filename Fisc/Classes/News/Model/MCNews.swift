@@ -12,8 +12,8 @@ class MCNews: NSObject {
     
     var title: String?
     var url: String?
-    var imageUrl: String?
-    var createTime: String?
+    var image: String?
+    var ori_source: String?
     var digest: String?
     
     init(dict: [String: Any]) {

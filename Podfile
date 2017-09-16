@@ -14,5 +14,6 @@ target 'Fisc' do
   pod 'Alamofire'
   pod 'SwiftyJSON'
   pod 'SVProgressHUD'
+  pod 'MJRefresh'
 
 end
