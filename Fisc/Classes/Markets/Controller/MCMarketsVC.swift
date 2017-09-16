@@ -11,6 +11,7 @@ import Alamofire
 import SDWebImage
 import SwiftyJSON
 import SVProgressHUD
+import MJRefresh
 
 class MCMarketsVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
@@ -28,17 +29,14 @@ class MCMarketsVC: UIViewController, UITableViewDataSource, UITableViewDelegate 
 
         setupUI()
         
-        SVProgressHUD.show(withStatus: "拼命加载中")
+        self.tableView.mj_header.beginRefreshing()
         loadRoomId()
         
     }
     
     func setupUI() {
         // set refresher
-        refresher = UIRefreshControl()
-        refresher.attributedTitle = NSAttributedString(string: "拖动来刷新")
-        refresher.addTarget(self, action: #selector(loadRoomId), for: .valueChanged)
-        self.tableView.addSubview(refresher)
+        self.tableView.mj_header = MJRefreshNormalHeader.init(refreshingTarget: self, refreshingAction: #selector(loadRoomId))
     }
 
 }
@@ -99,8 +97,7 @@ extension MCMarketsVC {
             let commitItem = MCCommit(content: content, time: time)
             commits.append(commitItem)
         }
-        SVProgressHUD.dismiss()
-        refresher.endRefreshing()
+        self.tableView.mj_header.endRefreshing()
         self.tableView.reloadData()
     }
     

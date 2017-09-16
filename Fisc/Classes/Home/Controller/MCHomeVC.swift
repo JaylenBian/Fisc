@@ -129,6 +129,7 @@ extension MCHomeVC {
         
         let nvc = self.tabBarController?.viewControllers?[2] as! UINavigationController
         let vc  = nvc.viewControllers[0] as! MCMarketsVC
+        vc.tableView.mj_header.beginRefreshing()
         vc.loadRoomId()
     }
     

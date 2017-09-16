@@ -16,6 +16,7 @@ class MCNews: NSObject {
     var ori_source: String?
     var digest: String?
     
+    // Use KVC mode
     init(dict: [String: Any]) {
         super.init()
         

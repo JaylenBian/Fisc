@@ -57,6 +57,7 @@ extension MCNewsTVC {
                 self.news.removeAll()
                 // update news array
                 for i in 0..<jsonData.count {
+                    // KVC 
                     let newsItem = MCNews.init(dict: jsonData[i].dictionaryObject!)
                     self.news.append(newsItem)
                 }
@@ -137,6 +138,16 @@ extension MCNewsTVC {
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 100
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let newsItem = news[indexPath.row]
+        
+        let vc = UIStoryboard(name: "News", bundle: nil).instantiateViewController(withIdentifier: "newsPageView") as! MCNewsPageVC
+        vc.news = newsItem
+        
+        vc.hidesBottomBarWhenPushed = true
+        self.navigationController?.pushViewController(vc, animated: true)
     }
     
 }

@@ -16,21 +16,21 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <view key="tableFooterView" contentMode="scaleToFill" id="Bnk-tq-gJU" userLabel="Footer View">
-                            <rect key="frame" x="0.0" y="72" width="375" height="44"/>
+                        <view key="tableFooterView" contentMode="scaleToFill" id="2SG-0Z-1pg">
+                            <rect key="frame" x="0.0" y="128" width="375" height="1"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         </view>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="articleCell" rowHeight="44" id="c7G-fy-bSa">
-                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="articleCell" rowHeight="100" id="c7G-fy-bSa">
+                                <rect key="frame" x="0.0" y="28" width="375" height="100"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="c7G-fy-bSa" id="qlK-K3-2JE">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="99.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" tag="1" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="news_placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="BSs-y0-Ynq">
-                                            <rect key="frame" x="8" y="8" width="120" height="27.5"/>
+                                            <rect key="frame" x="8" y="8" width="120" height="83.5"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="120" id="RD2-nF-NyY"/>
                                             </constraints>
@@ -45,7 +45,7 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" tag="3" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="时间" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nzz-ME-3r0">
-                                            <rect key="frame" x="136" y="15.5" width="231" height="20"/>
+                                            <rect key="frame" x="136" y="71.5" width="231" height="20"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="20" id="G35-St-hn5"/>
                                             </constraints>
@@ -74,10 +74,58 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="资讯" id="8gv-7A-cjy"/>
+                    <connections>
+                        <segue destination="BRm-9K-Lzp" kind="push" id="7mD-eX-2GG"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8zd-yH-gBu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="552.79999999999995" y="-150.67466266866569"/>
+            <point key="canvasLocation" x="551" y="-152"/>
+        </scene>
+        <!--Fisc资讯-->
+        <scene sceneID="NsK-sQ-d2t">
+            <objects>
+                <viewController storyboardIdentifier="newsPageView" id="BRm-9K-Lzp" customClass="MCNewsPageVC" customModule="Fisc" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="FLw-Se-15x"/>
+                        <viewControllerLayoutGuide type="bottom" id="C7W-nS-5qz"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="ysh-OB-7vu">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="myo-3m-dIb">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <dataDetectorType key="dataDetectorTypes"/>
+                                <connections>
+                                    <outlet property="delegate" destination="BRm-9K-Lzp" id="OAf-K7-ygp"/>
+                                </connections>
+                            </webView>
+                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="meT-Fu-Fl2">
+                                <rect key="frame" x="0.0" y="64" width="375" height="2"/>
+                            </progressView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="myo-3m-dIb" firstAttribute="leading" secondItem="ysh-OB-7vu" secondAttribute="leading" id="07G-Hy-RNv"/>
+                            <constraint firstAttribute="trailing" secondItem="myo-3m-dIb" secondAttribute="trailing" id="0or-oG-COS"/>
+                            <constraint firstAttribute="bottom" secondItem="myo-3m-dIb" secondAttribute="bottom" id="Xtv-zK-hKX"/>
+                            <constraint firstAttribute="trailing" secondItem="meT-Fu-Fl2" secondAttribute="trailing" id="Zeu-La-WVQ"/>
+                            <constraint firstItem="myo-3m-dIb" firstAttribute="top" secondItem="FLw-Se-15x" secondAttribute="bottom" id="fbg-cF-2H4"/>
+                            <constraint firstItem="meT-Fu-Fl2" firstAttribute="top" secondItem="myo-3m-dIb" secondAttribute="top" id="op4-DA-eXV"/>
+                            <constraint firstItem="meT-Fu-Fl2" firstAttribute="leading" secondItem="ysh-OB-7vu" secondAttribute="leading" id="r03-7w-fxq"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Fisc资讯" id="752-8G-NOB"/>
+                    <connections>
+                        <outlet property="progressView" destination="meT-Fu-Fl2" id="kCB-wc-Xd9"/>
+                        <outlet property="webView" destination="myo-3m-dIb" id="cIZ-Sa-SQY"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cB3-5h-1gz" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1258" y="-152"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="oUh-nt-xNf">
